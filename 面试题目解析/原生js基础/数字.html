@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //https://mp.weixin.qq.com/s/-7057awONTi3J9MGDZizVA
+console.log(1 === 1.0)//true
+console.log(0.1 + 0.2 === 0.3)//false
+console.log(0xff);
+// 2、数值的表示法
+console.log(123e3)
+console.log(1234567890123456789012)
+console.log(0.0000003)
+//NaN是 JavaScript 的特殊值，表示“非数字”（Not a Number），主要出现在将字符串解析成数字出错的场合。
+console.log(5 - 'x' )
+console.log(0 / 0 )
+console.log(typeof NaN);
+console.log(NaN === NaN)
+console.log(Boolean(NaN))
+console.log(NaN+32);//NaN
+
+
+// 5.1、parseInt() 方法用于将字符串转为整数
+parseInt('123') // 123
+console.log(parseInt('123'))
+console.log(parseInt(1.23))
+console.log(parseInt('8a'))
+console.log(parseInt('abc'))
+//5.2、parseFloat()
+console.log(parseFloat('3.14'));
+console.log(parseFloat('314e-2'))
+console.log(parseFloat('3.14more non-digit characters'))
+console.log(parseFloat([]))
+console.log(parseFloat('FF2'))
+console.log(parseFloat(''))
+
+// 这些特点使得parseFloat的转换结果不同于Number函数
+//Number() 函数把对象的值转换为数字。
+//Number如果对象的值无法转换为数字，那么 Number() 函数返回 NaN。
+console.log(parseFloat(true))//NaN
+console.log(Number(true))
+
+parseFloat(null) 
+// NaN
+Number(null) 
+// 0
+parseFloat('') 
+// NaN
+Number('') 
+// 0
+parseFloat('123.45#') 
+// 123.45
+Number('123.45#') 
+// NaN
+// isNaN()
+console.log(isNaN())
+
+
+</script>

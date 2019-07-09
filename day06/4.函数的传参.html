@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //number类型
+        function fn(a,b){
+            console.log(a+b);
+        }
+        fn(10,20);
+        fn(20,40);
+        /*var a=10;
+        a=20;*/
+        /*var a=10;
+        var b=20;
+        console.log(a+b);*/
+
+        //string字符串
+        function fn1(a){
+            console.log(a);
+        }
+        fn1("web前端");
+
+        //布尔类型
+        function boo(flag){
+            if(flag==true){
+                console.log("我睡觉去了");
+            }else {
+                console.log("我要积极的学前端");
+            }
+        }
+        boo(true);
+        boo(false);
+
+        //json类型的
+        var json={
+            "job":"student",
+            "name":"小花",
+            "age":18
+        };
+        function fn2(jss){
+            console.log("我的名字是："+jss.name+"，我是个"+jss.job+"，我今年"+jss.age);
+        }
+        fn2(json);
+
+        //数组
+        var arr=[1,2,3,4,5];
+        function fn3(nmb){
+            nmb.push(6);
+            console.log(nmb);
+        }
+        fn3(arr);
+
+        //函数类型
+        function fn4(fn5){
+            console.log(fn5);
+        }
+        fn4(function(){});
+
+        /*function 函数名(形式参数){
+            执行的语句，用的都是形参
+        }
+        函数名(实际上的参数);
+        可以传入数字类型，字符串等等*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //如果程序里边出现同名函数，后边的会把前边的覆盖掉
+        function fn(){
+            console.log(1);
+        }
+
+        function fn(){
+            alert(1);
+        }
+        fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

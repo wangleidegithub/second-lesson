@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //不考虑层级,有特定内容的就选取到
+            $("div:contains('123')").css("background","blue");
+
+            //选取空的对象
+            /*$("div:empty").css("background","red")
+                    .css("height","200px")
+                    .css("width","200px");*/
+
+            //首尾选择器
+            //$("li").css("background","red");
+            $("li:first").css("background","red");
+            $("li:last").css("background","red");
+
+            //下标索引
+//          $("li:eq(2)").css("background","red");
+
+            //lt小于下标的,gt大于下标的
+            //$("li:lt(2)").css("background","red");
+            //$("li:gt(2)").css("background","red");
+        })
+    </script>
+</head>
+<body>
+<div>123</div>
+<div></div>
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+</body>
+</html>

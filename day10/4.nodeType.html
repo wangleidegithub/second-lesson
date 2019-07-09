@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oul=document.getElementById("oul");
+            //console.log(oul.childNodes.length);
+
+            console.log(oul.nodeType);//1
+            console.log(oul.childNodes[0].nodeType);//3
+
+            for(var i=0;i<oul.childNodes.length;i++){
+                if(oul.childNodes[i].nodeType==1){
+                    oul.childNodes[i].style.background="red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="oul">
+    <li>第一行</li>
+    <li>第二行</li>
+    <li>第三行</li>
+</ul>
+</body>
+</html>

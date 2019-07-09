@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// 如果好多组件都共用到一些像 props、data、methods 等，可以单独抽出来放到 mixins 混合器中。比如，在用户管理列表中使用
+	// paging-mixin.vue
+export default {
+  props: {
+    pageSize: 1,
+    pageLength: 10,
+    currentPage: 1
+    total: 20
+  },
+  methods: {
+    /**
+     * 上一页
+     */
+    prevPage (page) {
+      ...
+    },
+    /**
+     * 下一页
+     */
+    nextPage (page) {
+      ...
+    }
+    /**
+     * 跳转到当前页
+     */
+    currentPage (page) {
+      ...
+    }
+  }
+}
+
+</script>
+<script>
+	<template>
+  <div class="user-model">
+    <my-table :data="users"></my-table>
+    <my-paging
+      :page-length="pageLength"
+      :page-size="pageSize"
+      :current-page="currentPage"
+      :total="total">
+    </my-paging>
+  </div>
+</template>
+
+<script>
+  import PagingMixin from '../mixins/paging-mixin.vue'
+  export default {
+    mixins: [PagingMixin],
+    data () {
+      return {
+        users: [],
+        pageLength: 10,
+        pageSize: 1,
+        currentPage: 1,
+        total: 20
+      }
+    }
+  }
+  //https://juejin.im/post/5be01d0ce51d450700084925?utm_source=gold_browser_extension
+</script>
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{list-style: none;height: 30px;width: 80px;font-size: 20px;
+            border: 1px solid red;line-height: 30px;text-align: center;}
+        #ul2{display: none;}
+    </style>
+    <script>
+        window.onload=function(){
+            var li1=document.getElementById("li1");
+            var ul2=document.getElementById("ul2");
+            //鼠标移入让ul2显示出来
+            li1.onmouseover=function(){
+                ul2.style.display="block";
+            };
+            //鼠标移出让ul2隐藏
+            li1.onmouseout=function(){
+                ul2.style.display="none";
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li id="li1">
+        <a>web前端</a>
+        <ul id="ul2">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

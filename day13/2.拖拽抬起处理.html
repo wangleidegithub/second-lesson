@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            box.onmousedown=function(){
+
+                document.onmousemove=function(ev){
+                    ev = ev || event;
+                    box.style.left=ev.clientX+"px";//鼠标的位置-鼠标到物体顶点的距离
+                    box.style.top=ev.clientY+"px";
+                };
+
+                box.onmouseup=function(){
+                    document.onmousemove=box.onmouseup=null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;background: red;position: absolute;" id="box"></div>
+</body>
+</html>

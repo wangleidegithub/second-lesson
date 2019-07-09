@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function() {
+
+            var aImg = document.getElementsByTagName('img');
+            //console.log(aImg.length);
+            function fnTime(){
+                var date=new Date();
+                var iHours=date.getHours();
+                var iMinutes=date.getMinutes();
+                var iSeconds=date.getSeconds();
+                var str=towT(iHours)+":"+towT(iMinutes)+":"+towT(iSeconds);//获取到时间例如14:20:30，对应8个图片
+                //alert(str);
+                for(var i=0;i<aImg.length;i++){
+                    //alert(str[i]);对应的是系统时间14:20:29，那么就排列成对应图片的0,1,2,3,4
+                    if(parseInt(str[i]) || str[i]==0){
+                        aImg[i].src="imgs/"+str[i]+".JPG";
+                    }else {
+                        aImg[i].src="imgs/colon.JPG";
+                    }
+                }
+            }
+
+            function towT(n){
+                return n<10?"0"+n:""+n;
+            }
+
+            fnTime();
+            setInterval(fnTime,1000);
+        }
+    </script>
+</head>
+<body>
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+<img src="imgs/0.JPG">
+</body>
+</html>

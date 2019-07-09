@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{list-style: none;height: 250px;width: 400px;float: left;margin-left: 20px;border: 1px solid red;
+        background: url("img/1.jpg") no-repeat;background-size: cover;}
+    </style>
+    <script>
+        window.onload=function(){
+            var lis=document.getElementsByTagName("li");
+            var flag=[true,true,true];
+            for(let i=0;i<lis.length;i++){
+                lis[i].onclick=function(){
+                    //console.log(flag);
+                    if(flag[i]){
+                        this.style.backgroundImage="url(img/2.jpg)";
+                        flag[i]=false;
+                    }else {
+                        this.style.backgroundImage="url(img/1.jpg)";
+                        flag[i]=true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

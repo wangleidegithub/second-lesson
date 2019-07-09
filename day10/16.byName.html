@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                var txt=document.getElementsByName("txt");
+                for(var i=0;i<txt.length;i++){
+                    txt[i].style.color="red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" value="HTML" name="txt">
+<input type="text" value="HTML" name="txt">
+<input type="text" value="HTML" name="txt">
+<input type="text" value="HTML">
+<input type="button" id="btn" value="按钮">
+</body>
+</html>

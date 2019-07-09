@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var inps=document.getElementsByTagName("input");
+            inps[1].onclick=function(){
+                var val=inps[0].value;
+                if(chekNum(val)){
+                    alert("是数字");
+                }else {
+                    alert("不是数字");
+                }
+            };
+            function chekNum(str){
+                for(var i=0;i<str.length;i++){
+                    var n=str.charCodeAt(i);
+//                  var n=str.charCodeAt();
+                    if(n<48 || n>57){
+                        return false;
+                    }
+                    return true;
+                }
+            }          
+        }
+    </script>
+</head>
+<body>
+<input type="text">
+<input type="button" value="按钮">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{height: 200px;width: 200px;padding: 10px;border: 5px solid red;margin: 20px;}
+    </style>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            console.log($("div").width());//只是宽度
+            console.log($("div").innerWidth());//宽度+padding
+            console.log($("div").outerWidth());//宽度+padding+边框
+            console.log($("div").outerWidth(true));//宽度+padding+边框+margin
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

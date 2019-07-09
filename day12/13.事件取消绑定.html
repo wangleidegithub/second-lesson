@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementById("btn");
+
+            function fn1(){
+                console.log(btn.type);
+            }
+            function fn2(){
+                console.log(btn.id);
+            }
+
+            btn.addEventListener("click",fn1,false);//执行冒泡
+            btn.addEventListener("click",fn2,false);//执行冒泡
+            btn.removeEventListener("click",fn1,false);
+            btn.removeEventListener("click",fn2,false);
+
+           /* //IE
+            btn.attachEvent("onclick",fn1);
+            btn.attachEvent("onclick",fn2);
+            btn.detachEvent("onclick",fn2);
+        }*/
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+</body>
+</html>

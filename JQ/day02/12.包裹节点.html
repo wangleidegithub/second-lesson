@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{background: red;}
+        h1{background: blue;}
+        h2{background: green;}
+    </style>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("a").wrap("<p></p>");//给每个a标签添加一个p标签
+                $("span").wrapAll("<h1></h1>");
+                $("i").wrapInner("<h2></h2>");
+            })
+        })
+    </script>
+</head>
+<body>
+<a>a标签</a>
+<a>a标签</a>
+<span>span</span>
+<div><span>span</span></div>
+<i>i标签</i>
+<button>按钮</button>
+</body>
+</html>

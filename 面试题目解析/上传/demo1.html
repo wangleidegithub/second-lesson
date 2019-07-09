@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table id="resultsTable" class="tabContent">
+
+    <tbody>
+        <tr class="row" th:each="company, companyStatus : ${companyQualificationsList}">
+
+            <td class="col-3 text-center">
+                <div th:text="${company.companyDesc}">企业描述</div>
+            </td>
+
+            <td class="col-4 text-center">
+
+                <div class="uploder-container" style="height: 47px;">
+                    <a th:id="@{(${company.companyCode})}" th:class="@{('filePicker pull-left')}">&nbsp;&nbsp;浏&nbsp;览&nbsp;&nbsp;  </a>
+                    <div class="uploadDiv" style="height: 100%;line-height:37px">
+                        <div>
+                            请选择企业资质文件
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix" th:if="${not #lists.isEmpty(company.companyQualificationsList)}" th:each="qualification : ${company.companyQualificationsList}">
+                    <div style="text-align:left" th:id="${qualification.qualificationsCode}">
+                        <span th:text="${qualification.qualificationsDesc}"></span>
+                        <a th:href="${qualification.qualificationsUrl}">下载</a>
+                        <a th:onclick="'javascript:deleteFile(\''+${company.companyCode}+'\',\''+${qualification.qualificationsCode}+'\')'">删除</a>
+                    </div>
+                </div>
+            </td>
+
+            <td class="col-5 text-center">
+                <button th:id="${companyStatus.index}" type="button" class="uploaderDone btn btn-h-sm btn-w-sm btn-blue">上传</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<script src="../js/jquery-1.8.3.js"></script>
+<script src=" http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js"></script>
+<script>
+	var uploaderArr;
+
+$(function(){
+
+    uploaderArr = new Array();
+
+    $('.uploder-container').each(function(index){
+
+        // 根据index找对象
+        var filePickerObj = $(this).find('.filePicker');
+        var row = filePickerObj.parent().parent().parent();
+        var uploadBtn = row.find('.uploaderDone');
+        var uploadDiv = row.find('.uploadDiv');
+
+        // companyCode
+        var companyCode = filePickerObj.attr('id');
+        console.log("companyCode = " + companyCode);
+
+        // 注册上传控件到uploaderArr : 控件对象,companyCode,
+        uploaderArr[index] = WebUploader.create({
+            auto: false,
+            method:'POST',
+            server:url,
+            pick: {
+                id: filePickerObj,
+                multiple:false
+            },
+            formData:{companyCode: companyCode}
+        });
+
+        uploaderArr[index].on('beforeFileQueued',function(file){
+
+            // 类型限制
+            //if(",jpg,png,ai,zip,rar,psd,pdf,cdr,psd,tif,".indexOf(","+file.ext+",")<0){
+            //    alert("不支持的文件格式");
+            //}
+
+            //文件名长度限制
+            if(file.name.length > 50){
+                alert("文件名超长");
+                return false;
+            }else{
+                return true;
+            }
+
+        });
+
+        // 当有文件被添加进队列的时候
+        uploaderArr[index].on('fileQueued', function (file) {
+            uploadDiv.html("");
+            if(file.name.length > 50){
+                stringObject.substring(0,stop)
+            }
+            uploadDiv.append('<div >' + file.name + '</div>');
+        });
+
+        //上传成功（注意：后台返回值这里可以获取到)
+        uploaderArr[index].on('uploadSuccess',function(file,reponse){
+
+            if(reponse.resCode == "0"){
+                alert("上传成功");
+            }else{
+                alert("上传失败 原因: " + reponse.message);
+            }
+
+            window.location.reload();
+        });
+
+        // 注册全部按钮事件
+        uploadBtn.click(function(){
+            var btnIndex = $(this).attr('id');
+            var uploader = uploaderArr[btnIndex];
+            uploader.upload();
+        });
+
+    });
+});
+
+</script>
+</body>
+</html>

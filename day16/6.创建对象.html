@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = new Object();
+        obj.name = "小明";   //var name = "小明";
+        obj.age = 18;
+        obj.talk=function(){
+            console.log(this);
+            console.log("我的名字是:"+this.name+",我今年："+this.age);
+        };
+        console.log(obj.name+"----"+obj.age);
+        obj.talk();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

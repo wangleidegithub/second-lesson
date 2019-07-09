@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div{width:200px;height:200px;background:pink;display: none;}
+        #box .active{background: yellow;}
+    </style>
+    <script>
+
+        window.onload=function() {
+            var tab = new tab1();
+            tab.btnClick();
+        };
+            function tab1(){
+                this.box=document.getElementById("box");
+                this.btn=box.getElementsByTagName("input");
+                this.odiv=box.getElementsByTagName("div");
+            };
+
+        tab1.prototype.btnClick=function(){
+            var thiso=this;
+            for(var i=0;i<this.btn.length;i++){
+                this.btn[i].index=i;
+                this.btn[i].onclick=function(){
+                    thiso.change(this)
+                };
+            }
+        };
+        tab1.prototype.change=function(obj){
+            for(var j=0;j<this.btn.length;j++){
+                this.btn[j].className="";
+                this.odiv[j].style.display="none";
+            }
+            obj.className="active";
+            this.odiv[obj.index].style.display="block";
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=[1,2,1,4,4,3,3];
+        /*for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    arr.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        console.log(arr);*/
+        
+        
+      
+   arr2 = [];
+for(var i = 0;i< arr.length;i++){
+    if(arr2.indexOf(arr[i]) < 0){
+    	console.log(arr2.indexOf(arr[i]))
+        arr2.push(arr[i]);
+    }
+}
+//console.log(arr2);
+//      apply()/call()求数组最值
+        var  numbers = [5, 458 , 120 , -215 ]; 
+        console.log(this)
+        var  maxInNumbers = Math.max.apply(this, numbers);  
+        var maxInNumbers=Math.max.apply(this,numbers);
+        console.log(maxInNumbers);  // 458
+    </script>
+</head>
+<body>
+
+</body>
+</html>

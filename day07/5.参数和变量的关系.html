@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*把全局变量a作为参数传入函数中，在函数中被重新声明后，
+         其最终值只对函数内部起作用，而不会影响全局的变量。
+         */
+        var a=1;
+        function fn(a){
+            console.log(a);//1
+            var a=2;
+            console.log(a);//2
+        }
+        fn(a);
+        console.log(a);//1
+    </script>
+</head>
+<body>
+
+</body>
+</html>

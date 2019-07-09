@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div,#box1 div{width:200px;height:200px;background:pink;display: none;}
+        .active{background: yellow;}
+    </style>
+    <script>
+        /*改成面向对象
+         全局变量就是属性
+         函数就是方法
+         onload中创建对象
+         this指向更改*/
+        window.onload=function(){
+            var t1=new Tab("box");
+            t1.btnClick();
+
+            var t2=new Tab("box1");
+            t2.btnClick();
+        };
+        function Tab(id){
+            this.box=document.getElementById(id);
+            this.btn=this.box.getElementsByTagName("input");
+            this.odiv=this.box.getElementsByTagName("div");
+        }
+        Tab.prototype.btnClick=function(){
+            var This=this;
+            for(var i=0;i<this.btn.length;i++){
+                this.btn[i].index=i;
+                this.btn[i].onclick=function(){
+                    This.fnClick(this);
+                }
+            }
+        };
+        Tab.prototype.fnClick=function(obj){
+            for(var i=0;i<this.btn.length;i++){
+                this.btn[i].className="";
+                this.odiv[i].style.display="none";
+            }
+            obj.className="active";
+            this.odiv[obj.index].style.display="block";
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+
+<div id="box1">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+</body>
+</html>

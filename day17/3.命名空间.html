@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*function fn(){
+         alert(1);
+         }
+         function fn(){
+         alert(2);
+         }
+         fn();*/
+
+        var obj={};
+        obj.a={};
+        obj.b={};
+        obj.c={};
+        obj.a.talk=function(){
+            alert(1);
+        };
+        obj.b.talk=function(){
+            alert(2);
+        };
+        obj.c.talk=function(){
+            alert(3);
+        };
+        obj.a.talk();
+        obj.b.talk();
+        obj.c.talk();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

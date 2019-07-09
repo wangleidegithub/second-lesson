@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.onkeydown=function(ev){
+                ev = ev || event;
+                if(ev.keyCode==37){
+                    alert("左键");
+                }else if(ev.keyCode==38){
+                    alert("上键");
+                }else if(ev.keyCode==39){
+                    alert("右键");
+                }else if(ev.keyCode==40){
+                    alert("下键");
+                }else{
+                    alert("其他键");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

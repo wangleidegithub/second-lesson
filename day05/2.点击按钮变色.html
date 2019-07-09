@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var btns=document.getElementsByTagName("input");
+            for(var i=0;i<btns.length;i++){
+                btns[i].onclick=function(){
+                	console.log(i)//3
+                    //btns[i].style.background="red";   这种写法不对
+                    this.style.background="red";
+                    console.log(this);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+</body>
+</html>

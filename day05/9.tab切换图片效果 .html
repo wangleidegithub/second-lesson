@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul { padding:0; margin:0; }
+        li { list-style:none; }
+        body { background:#333; }
+        #pic { width:400px; height:500px; position:relative; margin:0 auto; background:#fff; }
+        #pic img { width:400px; height:500px; }
+        #pic ul { width:40px; position:absolute; bottom:0; right:0;opacity: 0.8;}
+        #pic li { width:40px; height:40px; margin-bottom:4px; background:#666;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oimg=document.getElementsByTagName("img")[0];
+            var lis=document.getElementsByTagName("li");
+            var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+            for(var i=0;i<lis.length;i++){
+                lis[i].index=i;
+                lis[i].onclick=function(){
+                    oimg.src=arr[this.index];
+                }
+            }
+          
+        }
+    </script>
+</head>
+<body>
+<div id="pic">
+    <img src="img/1.jpg"/>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $(".inp1").css("width","10px");
+            $(".inp1").click(function(){
+                // $(".inp1:checked").css("width","50px");
+                $(this).css("width","50px");
+                // $(".inp2").not(".inp2:checked").css("width","50px");
+            });
+			
+            console.log($("option:selected").val());
+            console.log($("option:checked").val());
+            var str = " 23 23 ";
+			var str2 = str.replace(/\s*/g,"");
+			console.log(str2); // 2323
+			// $(".inp1:checked").css("width","50px");
+           
+        })
+    </script>
+</head>
+<body>
+<input type="radio" class="inp1">A
+<input type="radio" class="inp1">B
+<input type="radio" class="inp1">C
+<input type="checkbox" class="inp2">A
+<input type="checkbox" class="inp2">B
+<input type="checkbox" class="inp2">C
+<select id="sel1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+</body>
+</html>

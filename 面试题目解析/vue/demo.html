@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../js/vue.js"></script>
+	<script src="js/axios.js"></script>
+	<body>
+		<div id="app">
+			<button @click="fn">提交</button>
+			<div>
+				{{mes}}
+			</div>
+			<p>{{pages}}</p>
+		</div>
+	</body>
+</html>
+<script>
+	var app=new Vue({
+		el:"#app",
+		data:{
+			mes:"hello",
+			conList:['a','b','c','d','e','1','2','3','4','5']
+		},
+		computed:{
+			pages(){
+				const pages=[];
+				this.conList.forEach((item,index)=>{
+					const page=Math.floor(index/8);
+					console.log(index/8);
+					if(!pages[page]){
+						pages[page]=[];
+					}
+					pages[page].push(item);
+				})
+				return pages;
+			}
+		},
+		mounted(){
+			this.fn();
+		},
+		methods:{
+			fn:function(){
+//				var that=this;
+				axios.get("./aa.txt")
+				.then(function(res){
+//					console.log(res.data)
+					this.mes=res.data
+				}.bind(this))
+				.catch(function(err){
+					console.log(err)
+				})
+			}
+		}
+	})
+	
+
+</script>

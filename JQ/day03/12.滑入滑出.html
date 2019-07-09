@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("div").slideUp(2000);//改变高度滑出
+            });
+            $("#btn2").click(function(){
+                $("div").slideDown(2000);//改变高度滑入
+            });
+            $("#btn3").click(function(){
+                $("div").slideToggle(2000);//开关
+            });
+        })
+    </script>
+</head>
+<body>
+<div style="height: 200px;width: 200px;background: red;"></div>
+<button id="btn1">滑出</button>
+<button id="btn2">滑入</button>
+<button id="btn3">开关</button>
+</body>
+</html>

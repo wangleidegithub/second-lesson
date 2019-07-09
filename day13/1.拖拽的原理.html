@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            box.onmousedown=function(){
+
+                box.onmousemove=function(ev){
+                    ev = ev || event;
+                    box.style.left=ev.clientX+"px";
+                    box.style.top=ev.clientY+"px";
+                };
+
+                box.onmouseup=function(){
+
+                }
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;background: red;position: absolute;" id="box"></div>
+</body>
+</html>

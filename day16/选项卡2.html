@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div{width:200px;height:200px;background:pink;display: none;}
+        #box .active{background: yellow;}
+    </style>
+    <script>
+        //先变形，使用全局变量，尽量不要让函数嵌套函数，把onload中不是复制的语句单拿出来
+        var box=null;
+        var btn=null;
+        var odiv=null;
+        window.onload=function(){
+            box=document.getElementById("box");
+            btn=box.getElementsByTagName("input");
+            odiv=box.getElementsByTagName("div");
+            btnClick();
+        };
+        function btnClick(){
+            for(var i=0;i<btn.length;i++){
+                btn[i].index=i;
+                btn[i].onclick=fnClick;
+            }
+        }
+        function fnClick(){
+            for(var i=0;i<btn.length;i++){
+                btn[i].className="";
+                odiv[i].style.display="none";
+            }
+            this.className="active";//这个地方的this指的是按钮不是对象
+            odiv[this.index].style.display="block";//this同上
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+</body>
+</html>

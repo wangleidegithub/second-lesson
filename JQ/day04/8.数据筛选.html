@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        //数据筛选
+        $(function(){
+            var arr = [5,20,15,70,90];
+            var arr1 = $.grep(arr,function(elem,index){
+                console.log(elem+"---------"+index);
+                return elem > 10 && index > 1;
+            });
+            console.log(arr1);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

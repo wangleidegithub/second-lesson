@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a=1;//全局变量,函数内部可以取到
+        function fn(){
+            console.log(a+10);
+        }
+        fn();
+
+        /*function fn1(){
+            var b=10;//局部变量,在函数内部，外部取不到这个变量
+        }
+        console.log(b);
+        fn1();*/
+
+        function fn2(){
+            var c=10;//变量在函数内部，是这个函数私有的，只有这个函数能够使用
+            console.log(c+5);
+        }
+        fn2();
+
+        //怎么去拿到函数内部的变量呢？
+        var str="";
+        function fn3(){
+            var d="web前端";
+            str+=d;
+            console.log(str);
+        }
+        fn3();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/ajax.js"></script>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementById("btn");
+            var box=document.getElementById("box");
+            btn.onclick=function(){
+                ajax("text/2.json?t="+new Date().getTime(),function(str){
+                    var arr = eval(str);
+                    var box1=document.createElement("div");
+                    for(var i=0;i<arr.length;i++){
+                        box1.innerHTML+="<strong>姓名:</strong>"+arr[i].name+"</br>"+"<strong>年龄:</strong>"+arr[i].age;
+                        box.appendChild(box1);
+                    }
+                },function(){
+                    alert("请求失败");
+                });
+            };
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="请求数据">
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            /*alert(1);
+            window.alert(2);*/
+            document.getElementById("btn").onclick=function(){
+                if(confirm("您是否要关闭窗口?")){
+                    window.close();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="关闭">
+</body>
+</html>

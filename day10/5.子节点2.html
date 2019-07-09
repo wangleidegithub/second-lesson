@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oul=document.getElementById("oul");
+            console.log(oul);
+            console.log(typeof oul.children);//只包含元素
+			console.log(oul.children.length);
+            for(var i=0;i<oul.children.length;i++){
+                oul.children[i].style.background="red";
+                oul.children[i].style.background="blue";
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="oul">
+    <li>第一行</li>
+    <li>第二行</li>
+    <li>第三行</li>
+</ul>
+</body>
+</html>

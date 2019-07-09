@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            console.log(event);
+            console.log(window.event);
+
+            document.onclick=function(ev){
+                ev = ev || event;
+                console.log(ev.type);
+                console.log(ev.target);
+                console.log(ev.clientX+"---------"+ev.clientY);
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<button></button>
+</body>
+</html>

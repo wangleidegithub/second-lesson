@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            var box = document.getElementsByTagName("div")[0];
+            alert(box);
+
+            /*box.css("background","red")
+                    .css("height","200px")
+                    .css("width","200px");*/
+            //DOM转成JQ
+            /*$(box).css("background","red")
+                    .css("height","200px")
+                    .css("width","200px");*/
+
+            //转化成DOM的方法
+            $("div")[0].style.cssText="width:200px;height:200px;background:red;";
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            box.onclick=function(){
+                console.log(box.id);
+            };
+
+            //解决方法
+            window.onunload=function(){
+                box.onclick=null;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">123</div>
+</body>
+</html>

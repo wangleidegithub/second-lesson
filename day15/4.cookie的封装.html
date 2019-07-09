@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            function setCookie(key,value,time){
+                var date = new Date();
+                date.setDate(date.getDate()+time);
+                document.cookie=key+"="+value+";expires="+date;
+            }
+            function getCookie(key){
+                var arr = document.cookie.split("; ");
+                for(var i=0;i<arr.length;i++){
+                    var arr2 = arr[i].split("=");
+                    if(arr2[0]==key){
+                        return arr2[1];
+                    }
+                }
+            }
+
+            function removeCookie(key){
+                setCookie(key,"",-1);
+            }
+            setCookie("name","jack",5);
+            console.log(getCookie("name"));
+            removeCookie("name");
+            console.log(getCookie("name"));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

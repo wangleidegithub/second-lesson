@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+/*function add(x,y){
+	return x+y
+}
+//用call 来调用 add 方法
+function myAddCall(x,y){
+	return add.call(this,x,y)
+}
+function myAddapply(x,y){
+	return add.apply(this,[x,y])
+}
+ console.log(myAddCall(10, 20));    //输出结果30
+ console.log(myAddapply(20, 20));  //输出结果40
+ // 改变函数作用域
+    var name="小白";
+    var obj = {name:'小红'};
+
+    function sayName() {
+        return this.name;
+    }
+    console.log(this.name);
+    console.log(sayName.call(this));//输出小白
+    console.log(sayName. call(obj));    //输入小红*/
+
+    //高级用法，实现 js 继承
+     var name="小白";
+    function Person(){
+    	this.sayName=function(){
+    		console.log(this);
+    		return this.name;
+    	}
+    	console.log(this);
+    }
+    Person();
+    function Chinese(name){
+    	Person.call(this);
+    	this.name=name;
+    	this.ch=function(){
+    		alert("我是");
+    	}
+    }
+     //测试
+    var chinese = new Chinese('成龙');
+    //调用 父类方法
+    console.log(chinese.sayName());   //输出 成龙
+    console.log(Math.min(1,2,3))
+    var array=[10,9,0]
+    var min=Math.min.apply(null,array);
+    console.log(min);
+</script>

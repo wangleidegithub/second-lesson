@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{height: 100px;width: 100px;background: red;}
+    </style>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var time=null;
+            var n=30;
+            box.onmouseover=function(){
+                clearInterval(time);
+                time=setInterval(function(){
+                    n++;
+                    if(n>=100){clearInterval(time)}
+                    box.style.height=box.offsetHeight+n/20+"px";
+                },30)
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

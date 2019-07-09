@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var btn=document.getElementById("btn");
+            var arr=['资深女主管在优就业学习后的一点感悟',
+                '年薪40万“屌丝”的优就业SEO培训学习体验',
+                '放弃搜狗offer入职名企做副总，大专生参加优就业培训改变命运！',
+                '数控技工参加优就业网络营销培训，成功转行入职云*集团',
+                '我在优就业培训的日子，SEO学员感悟：致优就业'];
+            var flag=true;
+            btn.onclick=function(){
+                if(flag){
+                    for(var i=0;i<arr.length;i++){
+                        box.innerHTML+="<p>"+arr[i]+"</p>";
+                    }
+                    flag=false;
+                }else{
+                    	box.innerHTML='';
+                    	flag=true
+                    }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<button id="btn">加载新闻</button>
+</body>
+</html>

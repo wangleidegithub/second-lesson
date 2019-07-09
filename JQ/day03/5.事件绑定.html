@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            function fn(){console.log("fn")}
+            function fn1(){console.log("fn---1")}
+            $("a").bind("click",fn,false);
+            $("a").bind("click",fn1,true);
+            $("a").bind("mouseover",fn1);
+           
+            //$("a").unbind();//把上边的事件全部移除
+            //$("a").unbind("mouseover");//把"mouseover"的事件全部移除
+            $("a").unbind("click",fn1);//把"click"事件绑定的fn1移除掉
+
+            $("button").bind("mouseover mouseout",fn);//移入移除都去执行fn
+				
+            /*$("p").bind({
+                "mouseover":function(){alert(1)},
+                "mouseout":function(){alert(2)}
+            })*/
+        })
+    </script>
+</head>
+<body>
+<a>21312321</a>
+<button>btn</button>
+<p>p标签</p>
+</body>
+</html>

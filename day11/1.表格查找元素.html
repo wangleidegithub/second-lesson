@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var tb=document.getElementById("tb");
+            /*console.log(tb.getElementsByTagName("thead")[0].getElementsByTagName("tr")[0].
+            getElementsByTagName("td")[0].firstChild.nodeValue);*/
+            console.log(tb.tHead.rows[0].cells[1].innerHTML);
+            console.log(tb.tBodies[0].rows[0].cells[0].innerHTML);
+            console.log(tb.tFoot.rows[0].cells[0].innerHTML);
+            console.log(tb.tHead.rows[0].cells[0].innerHTML)
+        }
+    </script>
+</head>
+<body>
+<table border="1" id="tb" width="300">
+    <thead>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>老王</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>皮皮虾</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>大闸蟹</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>小龙虾</td>
+            <td>4</td>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>

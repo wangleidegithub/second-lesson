@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                var newli=document.createElement("li");
+                var newText=document.createTextNode("361");
+                var oul=document.getElementById("myul");
+                newli.appendChild(newText);
+                oul.appendChild(newli);
+                
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="myul">
+    <li>耐克</li>
+    <li id="f1">阿迪达斯</li>
+    <li>乔丹</li>
+    <li>美特斯邦威</li>
+    <li id="f2">李宁</li>
+</ul>
+<input type="button" value="追加" id="btn">
+</body>
+</html>

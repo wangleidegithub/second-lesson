@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=["web前端开发","HTML","CSS","JS"];
+        console.log(arr);
+        console.log(arr.splice(1));//从下标为1开始（包括这一项）到最后全部截取掉["HTML","CSS","JS"]
+        console.log(arr);//["web前端开发"]
+       //console.log(arr.splice(0,3));//从第0项开始删除3个 ["web前端开发","HTML","CSS"]
+        //console.log(arr);//["JS"]
+
+     /*  console.log(arr.splice(1,2,"jQuery","node"));//从第一项开始，替换2个，后边是替换的值 ["HTML", "CSS"]
+        console.log(arr);// ["web前端开发", "jQuery", "node", "JS"]*/
+
+        /*console.log(arr.splice(1,0,"jQuery"));//从第一项开始，替换2个，后边是替换的值
+        console.log(arr);*/
+       console.log(arr.slice(0,1));//返回一个新的数组，包含从 start (下标)到 end （下标不包括该元素）的 arrayObject 中的元素
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

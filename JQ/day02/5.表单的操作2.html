@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            console.log($("input").val());
+            $(".txt").val("web前端");
+
+            $(".inp1").click(function(){
+                console.log($(".inp1:checked").val());
+            });
+
+            $("#btn").click(function(){
+                $(".che:checked").each(function(index,elem){
+                	
+                    console.log(index+"--------"+$(elem).val());
+                })
+            })
+
+            //$(".inp1").val(["AA"]);
+            //$(".che").val(["B","C"]);
+
+            //$("select").val(["2"]);
+        })
+    </script>
+</head>
+<body>
+<input type="text" value="" class="txt">
+<input type="radio" class="inp1" value="AA">A
+<input type="radio" class="inp1" value="BB">B
+<input type="checkbox" value="A" class="che">
+<input type="checkbox" value="B" class="che" checked>
+<input type="checkbox" value="C" class="che">
+<input type="checkbox" value="D" class="che">
+<select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<button id="btn">按钮</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{height: 200px;width: 200px;background: red;opacity: 0.3;}
+    </style>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var n=30;
+            var time=null;
+            var time2=null;
+            box.onmouseover=function(){
+                clearInterval(time2);
+                time=setInterval(function(){
+                    n++;
+                    if(n>=100){clearInterval(time)}
+                    box.style.opacity=n/100;
+                },30)
+            };
+
+            box.onmouseout=function(){
+                clearInterval(time);
+                time2=setInterval(function(){
+                    n--;
+                    if(n<=30){clearInterval(time2)}
+                    box.style.opacity=n/100;
+                },30)
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

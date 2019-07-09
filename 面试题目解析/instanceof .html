@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	/*谈到 instanceof 我们要多插入一个问题，就是 function 的 arguments，我们大家也许都认为 arguments 是一个 Array，
+	但如果使用 instaceof 去测试会发现 arguments 不是一个 Array 对象，尽管看起来很像。*/
+	
+	var a=new Array();
+	if (a instanceof Object) 
+	{
+		alert('Y');
+	}else{
+		alert('N');
+	}
+var simpleStr = "This is a simple string";
+var myString  = new String();
+var newStr    = new String("String created with constructor");
+var myDate    = new Date();
+var myObj     = {};
+console.log(typeof String);
+console.log(simpleStr instanceof String);
+console.log(myString  instanceof String)
+console.log(newStr    instanceof String)
+console.log(myString  instanceof Object)
+simpleStr instanceof String; // returns false, 检查原型链会找到 undefined
+myString  instanceof String; // returns true
+newStr    instanceof String; // returns true
+myString  instanceof Object; // returns true
+</script>

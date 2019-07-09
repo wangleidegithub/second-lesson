@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str="Web前端工程师的职责是编写网页标准优化代码，并增加交互动态功能，开发JavaScript以及Flash模块";
+      /*  console.log(str.substring(1));//从下标为1开始到最后都截取
+        console.log(str.substring(1,5));//从下标为1截取到5，包括1（开始）不包括5（结束）
+        console.log(str.substring(-3,5));//开始负数等于从0开始
+        console.log(str.substring(10,5));//自动颠倒顺序
+        console.log(str);*/
+		
+        console.log(str.slice(1));//从下标为1开始到最后都截取
+        console.log(str.slice(1,5));//从下标为1截取到5，包括1（开始）不包括5（结束）
+        console.log(str.slice(-3,5));//开始负数无效
+        console.log(str.slice(10,5));//不会自动颠倒顺序
+        console.log(str);
+        
+        console.log(str.substr(1));//eb前端工程师的职责是编写网页标准优化代码，并增加交互动态功能，开发JavaScript以及Flash模块
+        console.log(str.substr(1,5));//eb前端工
+        console.log(str.substr(-3,5));//h模块
+        console.log(str.substr(10,5));//责是编写网
+                console.log(str);
+        //两种方法都包含start位的字符串，区别在于substring不包含end位的字符串，substr包含
+    </script>
+</head>
+<body>
+
+</body>
+</html>

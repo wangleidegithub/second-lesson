@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var oimg=document.getElementById("oimg");
+            function drap(obj){
+                obj.onmousedown=function(ev){
+                    ev = ev || event;
+                    var disX=ev.clientX-obj.offsetLeft;//鼠标到物体顶点的距离=鼠标的位置-物体到边距的距离
+                    var disY=ev.clientY-obj.offsetTop;
+                    //ie低版本截取行为
+                    if(obj.setCapture){
+                        obj.setCapture();
+                    }
+                    document.onmousemove=function(ev){
+                        ev = ev || event;
+                        var L=ev.clientX-disX;
+                        var Y=ev.clientY-disY;
+
+                        if(L<150){
+                            L=0;
+                        }else if(L>document.documentElement.clientWidth-obj.offsetWidth){
+                            L=document.documentElement.clientWidth-obj.offsetWidth;
+                        }
+
+                        if(Y<0){
+                            Y=0;
+                        }else if(Y>document.documentElement.clientHeight-obj.offsetHeight){
+                            Y=document.documentElement.clientHeight-obj.offsetHeight;
+                        }
+
+                        obj.style.left=L+"px";//鼠标的位置-鼠标到物体顶点的距离
+                        obj.style.top=Y+"px";
+                    };
+
+                    obj.onmouseup=function(){
+                        document.onmousemove=obj.onmouseup=null;
+                        //清空ie低版本下的截取行为
+                        if(obj.setCapture){
+                            obj.releaseCapture();
+                        }
+                    };
+                    //解决默认行为
+                    return false;
+                }
+            }
+
+            drap(box);
+            drap(oimg);
+        }
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;background: red;position: absolute;" id="box">文字</div>
+<img src="img/img1.jpg" style="position: absolute;" id="oimg">
+</body>
+</html>

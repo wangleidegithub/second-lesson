@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //数字类型和字符串类型
+        function fn(){
+            return 100+"web前端";
+            //alert(1);
+        }
+       
+        console.log(fn());
+
+        //函数类型
+        function fn2(a){
+            return function fn3(b){
+                console.log(a+b);
+            }
+        }
+        fn2(10)(20);
+
+        //布尔类型
+        function fn4(a,b){
+            return a<b;
+        }
+        console.log(fn4(10,20));
+
+        //json类型的
+        function fn5(){
+            var json={
+                "name":"小花",
+                "age":15
+            };
+            return json;
+        }
+        console.log(fn5());
+
+        //数组类型
+        var arr=[1,2,3,4];
+        function fn6(arr1){
+            arr1.push(5);
+            return arr1;
+        }
+        console.log(fn6(arr));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

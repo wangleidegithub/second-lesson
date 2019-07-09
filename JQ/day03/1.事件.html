@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{height:150px;padding: 30px;background: black;width: 240px;}
+        p{height:80px;background: red;width: 200px;}
+    </style>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            var a= 0;
+            var b= 0;
+            var c= 0;
+            var d= 0;
+            $("#over").mouseover(function(){
+                $("#over span").html(a+=1);
+            });
+            $("#out").mouseout(function(){
+                $("#out span").html(b+=1);
+            });
+            $("#enter").mouseenter(function(){
+                $("#enter span").html(c+=1);
+            });
+            $("#leave").mouseleave(function(){
+                $("#leave span").html(d+=1);
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="over">
+    <p> over: <span></span></p>
+</div>
+<div id="out">
+    <p> out: <span></span></p>
+</div>
+<div id="enter">
+    <p> enter: <span></span></p>
+</div>
+<div id="leave">
+    <p> leave: <span></span></p>
+</div>
+</body>
+</html>

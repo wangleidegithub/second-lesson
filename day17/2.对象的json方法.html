@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //把对象所有的属性都放在花括号里，叫做面向对象的json方式,也叫做字面两方式
+        var obj={
+            name:"jack",
+            age:18,
+            talk:function(){
+                console.log(this.name,this.age);
+            }
+        };
+        console.log(obj.name,obj.age);
+        obj.talk();
+        function fn(){
+            console.log(obj.name);
+        }
+        fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

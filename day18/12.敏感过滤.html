@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //替换
+        var str = "18939236758";
+        var re = /\d{4}/g;
+        re.lastIndex=3;
+        console.log(str.replace(re.exec(str),"****"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

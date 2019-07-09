@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementById("btn");
+            btn.onclick=function(){
+                //创建ajax对象
+                var xhr = new XMLHttpRequest();
+                //xhr.open(请求的类型,请求的地址,异步为true，同步为false)
+                /*GET的URL会有长度上的限制，则POST的数据则可以大。
+                 POST比GET安全。*/
+                xhr.open("get","text/1",true);
+                xhr.send();
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4){//读取状态为4接受数据
+                        alert(xhr.responseText);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="请求数据">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    	.a{
+    		color: red;
+    	}
+    </style>
+    <script>
+        window.onload=function() {
+            var box = document.getElementById("box");
+            var txt =  document.getElementById("txt");
+            var btn =  document.getElementById("btn");
+            btn.onclick=function(){
+                //我们的标签里边可以包含其他的标签，但是这些标签的值都是固定的，所以要加上引号
+                box.innerHTML="<h1 class='a'>"+txt.value+"</h1>";
+              
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<input type="text" id="txt" value="你好">
+<input type="button" id="btn" value="按钮">
+</body>
+</html>

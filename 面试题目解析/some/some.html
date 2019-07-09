@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  //   some():方法用于检测数组中的元素是否有满足指定条件的，若满足返回true，否则返回false；
+//  every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false；
+
+var arr = [{
+      key: '01',
+      value: '乐乐'
+   }, {
+      key: '02',
+      value: '博博'
+   }, {
+      key: '03',
+      value: '淘淘'
+   },{
+      key: '04',
+      value: '哈哈'
+   },{
+      key: '01',
+      value: '乐乐'
+   }];
+
+
+   //  方法1：利用对象访问属性的方法，判断对象中是否存在key
+   var result = [];
+   var obj = {};
+   for(var i =0; i<arr.length; i++){
+      if(!obj[arr[i].key]){
+         result.push(arr[i]);
+         obj[arr[i].key] = true;
+      }
+   }
+   console.log(result); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
+   for(var i=0;i<arr.length;i++){
+       if(!obj[arr[i].key]){
+            result.push(arr[i])
+            obj[arr[i].key]=true
+        }
+   }
+
+   //  方法2：利用reduce方法遍历数组,reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
+      var obj = {};
+    arr = arr.reduce(function(item, next) {
+      obj[next.key] ? '' : obj[next.key] = true && item.push(next);
+      return item;
+   }, []);
+   console.log(arr); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
+   arr=arr.reduce(function(item,next){
+
+   })
+   //some  some()是对数组中每一项运行给定函数，如果该函数对任一项返回true，则返回true。
+   // var newArr=arr.some(function(item,index){
+   //    return item.key=="04"
+   // })
+   // console.log(newArr);
+   var array=[2,2,2,4,8];
+   var even=function(element){
+      return element%2===0;
+   }
+   console.log(array.some(even));
+   //every  every()是对数组中每一项运行给定函数，如果该函数对每一项返回true,则返回true。
+   console.log(array.every(even));
+
+   var items = [10, 120, 1000];
+
+   // our reducer function
+   var reducer = function add(sumSoFar, item) { return sumSoFar + item; };
+  
+   // do the job
+   var total = items.reduce(reducer, 0);
+
+   console.log(total); // 1130
+
+</script>

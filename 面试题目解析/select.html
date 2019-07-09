@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+    <select onchange="Cmd(this);">
+        <option value="1">变压器</option>
+        <option value="2">发电机</option>
+    </select>
+</div>
+<table><tr><td>名称1</td><td id="spfd" style="display:none;">发电机类型：<select><option>火电</option></select></td><td>类型2</td></tr></table>
+<script>
+    function Cmd(v){
+        var td = document.getElementById("spfd");
+        console.dir(document.getElementsByTagName('select'))
+        if(v.options[v.options.selectedIndex].value == "2") //如果选择项的value是2
+            td.style.display = "block";
+        else
+            td.style.display = "none";
+    }
+</script>
+</body>
+</html>

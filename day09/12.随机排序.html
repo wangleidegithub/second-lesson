@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=[];
+        for(var i=0;i<100;i++){
+            arr.push(i);
+            console.log(Math.random())
+        }
+		
+        arr.sort(function(){
+            return 0.5-Math.random();
+        });
+        console.log(arr);
+        //里边的两两去比较，看得到的这个数是否大于或者小于零
+        //我们利用随机数,0.5-Math.random()要么大于0要么小于0，等0的时候位置不交换
+    </script>
+</head>
+<body>
+
+</body>
+</html>

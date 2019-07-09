@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{list-style: none;height: 20px;}
+    </style>
+    <script>
+        window.onload=function(){
+            /*var box=document.getElementById("box");
+            console.log(box);*/
+            var lis=document.getElementsByTagName("li");
+            console.log(lis.length);
+            //lis.style.background="red";
+            lis[0].style.background="red";
+            lis[1].style.background="green";
+            lis[2].style.background="blue";
+            
+            var ul2=document.getElementsByTagName("ul")[1];
+            var lis1=ul2.getElementsByTagName("li");
+            lis1[0].style.background="pink";
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<ul id="ul2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

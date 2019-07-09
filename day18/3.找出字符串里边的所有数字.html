@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = "sad123gfh456fdg789";
+        var arr = [];
+        function findNum(str1){
+            for(var i=0;i<str.length;i++){
+            	console.log(str1.charAt(i))
+                if(str1.charAt(i)>="0" && str1.charAt(i)<="9"){
+                    arr.push(str1.charAt(i));
+                }
+            }
+            return arr;
+        }
+       
+        console.log(findNum(str));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

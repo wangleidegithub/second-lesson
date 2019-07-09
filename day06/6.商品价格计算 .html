@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oul=document.getElementById("list");
+            var lis=oul.getElementsByTagName("li");
+
+            function add(oli){
+                var inps=oli.getElementsByTagName("input");
+                var ostr=oli.getElementsByTagName("strong")[0];
+                var oem=oli.getElementsByTagName("em")[0];
+                console.log(oem.innerHTML+'---'+ostr.innerHTML);
+                var ospan=oli.getElementsByTagName("span")[0];
+                var danjian=parseFloat(oem.innerHTML);
+                var num=parseInt(ostr.innerHTML);
+                // console.log(typeof oem.innerHTML*ostr.innerHTML)
+                inps[0].onclick=function(){
+                    num--;
+                    if(num<0)num=0;
+                    ostr.innerHTML=num;
+                    ospan.innerHTML=num*danjian+"元";
+                };
+                inps[1].onclick=function(){
+                    num++;
+                    ostr.innerHTML=num;
+                    ospan.innerHTML=num*danjian+"元";
+                };
+            }
+            for(var i=0;i<lis.length;i++){
+                add(lis[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <input type="button" value="-" />
+        <strong>0</strong>
+        <input type="button" value="+" />
+        单价：<em>12.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-" />
+        <strong>0</strong>
+        <input type="button" value="+" />
+        单价：<em>10.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-" />
+        <strong>0</strong>
+        <input type="button" value="+" />
+        单价：<em>8.5元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-" />
+        <strong>0</strong>
+        <input type="button" value="+" />
+        单价：<em>8元</em>
+        小计：<span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="-" />
+        <strong>0</strong>
+        <input type="button" value="+" />
+        单价：<em>14.5元</em>
+        小计：<span>0元</span>
+    </li>
+</ul>
+</body>
+</html>

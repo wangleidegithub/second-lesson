@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fn(){
+            var a = 1;
+        }
+        fn();//当fn执行完之后,a就被回收了，下次再调用这个函数的时候再赋值
+
+        function fn1(a){
+            var b = 10;
+            function fn2(){
+                console.log(a+b);//fn2一直在引用着b，b不会被垃圾回收
+            }
+        }
+        fn1();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

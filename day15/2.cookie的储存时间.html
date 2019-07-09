@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+           var date = new Date();
+            console.log(date.getTime());
+            date.setDate(date.getDate()+5);
+            document.cookie="userName=bill;";
+            document.cookie="age=16;expires="+date;  
+            // document.cookie="age=16,expries="+date
+
+        }
+    </script>
+</head>
+<body>
+222
+</body>
+</html>

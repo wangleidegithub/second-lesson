@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementById("btn");
+            btn.onclick=function(){
+                ajax("text/1",function(str){
+                    alert(str);
+                },function(){
+                    alert("请求失败");
+                });
+            };
+            function ajax(url,succ,faild){
+                if(window.XMLHttpRequest){
+                    var xhr = new XMLHttpRequest();
+                }else {
+                    var xhr = new ActiveXObject("Microsoft.XMLHTTP");//兼容IE
+                }
+                xhr.open("get",url,true);
+                xhr.send();
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4){//读取状态为4接受数据
+                        if(xhr.status==200){//状态码200代表成功
+                            succ(xhr.responseText);//实际参数
+                        }else {
+                            faild("数据加载失败");
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="请求数据">
+</body>
+</html>

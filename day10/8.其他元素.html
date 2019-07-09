@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oul=document.getElementById("oul");
+            console.log(oul.firstChild);//ie低版本正确的元素标签，标准下是折行(文本)
+            console.log(oul.firstElementChild);//标准下正确的元素标签   ie低版本  undefined
+
+            var ofirst=oul.firstElementChild || oul.firstChild;
+            var onext=ofirst.nextElementSibling || ofirst.nextSibling;
+            var olast=oul.lastElementChild || oul.lastChild;
+            var opre=olast.previousElementSibling || olast.previousSibling;
+      
+            ofirst.style.background="red";
+            onext.style.background="yellow";
+            olast.style.background="black";
+            opre.style.background="green";
+        }
+    </script>
+</head>
+<body>
+<ul id="oul">
+    <li>第一行</li>
+    <li>第二行</li>
+    <li>第三行</li>
+    <li>第四行</li>
+</ul>
+</body>
+</html>

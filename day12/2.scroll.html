@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            console.log(document.body.scrollTop);//谷歌
+            console.log(document.body.scrollLeft);
+
+            console.log(document.documentElement.scrollTop);//火狐和ie
+            console.log(document.documentElement.scrollLeft);
+
+            var sc=document.body.scrollTop || document.documentElement.scrollTop;
+            console.log(sc);
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+
+</body>
+</html>

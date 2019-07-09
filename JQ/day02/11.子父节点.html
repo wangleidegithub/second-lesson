@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //find方法不受层级限制
+            $("div").find("a").click(function(){alert("a标签")});
+            //children受层级的影响，选中的下一级
+            $("div").children("b").click(function(){alert("b标签")});
+            //parent直接父级
+            $("#a1").parent().css("height","200px").css("width","200px").css("background","black");
+            //parents所有父级
+            console.log($("#a1").parents());
+            console.log($("#a1").parents("body"));
+        })
+    </script>
+</head>
+<body>
+<div>
+    <a>第一个a标签</a>
+    <b>div里的b</b>
+    <p>
+        <a id="a1">p标签里边的a</a>
+        <b>p标签里边的b标签</b>
+    </p>
+</div>
+</body>
+</html>

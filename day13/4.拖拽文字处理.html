@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            box.onmousedown=function(ev){
+                ev = ev || event;
+                var disX=ev.clientX-box.offsetLeft;//鼠标到物体顶点的距离=鼠标的位置-物体到边距的距离
+                var disY=ev.clientY-box.offsetTop;
+                //ie低版本截取行为
+                if(box.setCapture){
+                    box.setCapture();
+                }
+                document.onmousemove=function(ev){
+                    ev = ev || event;
+                    box.style.left=ev.clientX-disX+"px";//鼠标的位置-鼠标到物体顶点的距离
+                    box.style.top=ev.clientY-disY+"px";
+                };
+
+                box.onmouseup=function(){
+                    document.onmousemove=box.onmouseup=null;
+                    //清空ie低版本下的截取行为
+                    if(box.setCapture){
+                        box.releaseCapture();
+                    }
+                };
+                //解决默认行为
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;background: red;position: absolute;" id="box">文字</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var date = new Date();
+            console.log(date);
+            date.setDate(date.getDate()+5);
+            document.cookie="userName=bill;";
+            document.cookie="age=16;expires="+date;
+            console.log(document.cookie);
+
+            function getCookie(key){
+                var arr = document.cookie.split("; ");
+                console.log(arr);
+                for(var i=0;i<arr.length;i++){
+                    var arr2 = arr[i].split("=");
+                    console.log(arr2);
+                    if(arr2[0]==key){
+                        return arr2[1];
+                    }
+                }
+            }
+            console.log(getCookie("userName"));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

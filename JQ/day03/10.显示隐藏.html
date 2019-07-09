@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                //$("div").hide();
+                //$("div").hide(2000);    //时间
+                //$("div").hide("fast");   //slow慢速 fast快速的
+                //$("div").hide(2000,"linear"); //swing 慢-快-慢 linear缓冲
+                $("div").hide(2000,"linear",function(){
+                    $("div").show();
+                });
+            });
+            $("#btn2").click(function(){
+                $("div").show(2000);
+            });
+            $("#btn3").click(function(){
+                $("div").toggle(2000);
+            })
+        })
+    </script>
+</head>
+<body>
+<div style="height: 200px;width: 200px;background: red;"></div>
+<button id="btn1">隐藏</button>
+<button id="btn2">显示</button>
+<button id="btn3">开关</button>
+</body>
+</html>

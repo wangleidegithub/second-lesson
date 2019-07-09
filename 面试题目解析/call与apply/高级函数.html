@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+    var oblist={
+        name:'methods',
+        getSum:function(){
+            console.log(this)
+        }
+    }
+    oblist.getSum();
+    // new 构造函数名(),this指向构造函数
+    function Person() {
+      console.log(this); //指向构造函数Person
+    }
+    var personOne = new Person();
+    //2.4 间接调用
+    function foo() {
+       console.log(this);
+    }
+    foo.apply('我是apply改变的this值');//我是apply改变的this值
+    foo.call('我是call改变的this值');//我是call改变的this值
+    var foo = {
+      name:"张三",
+      logName:function(){
+        console.log(this.name);
+      }
+    }
+    var bar={
+      name:"李四"
+    };
+    foo.logName.call(bar);//李四
+    // 实质是call改变了foo的this指向为bar,并调用该函数
+    
+</script>

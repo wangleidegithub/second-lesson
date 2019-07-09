@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oname=document.getElementById("name");
+            var tb=document.getElementById("tb");
+            var btn=document.getElementById("btn");
+
+            btn.onclick=function(){
+                for(var i=0;i<tb.tBodies[0].rows.length;i++){
+                    if(tb.tBodies[0].rows[i].cells[0].innerHTML==oname.value){
+                        tb.tBodies[0].rows[i].style.background="red";
+                    }else {
+                        tb.tBodies[0].rows[i].style.background="";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="name">
+<input type="button" id="btn" value="搜索">
+<table border="1" id="tb" width="500">
+    <thead>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Joy</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>LaoWang</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>大闸蟹</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

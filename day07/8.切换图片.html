@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oImg=document.getElementsByTagName("img")[0];
+            var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+            var n=0;
+            setInterval(function(){
+                oImg.src=arr[n];
+                n++;
+                if(n==4)n=0;
+            },1000)
+        }
+    </script>
+</head>
+<body>
+<img src="img/1.jpg">
+<button></button>
+</body>
+</html>

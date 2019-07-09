@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.wrapper {
+			position: relative;
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+		}
+		
+		.content {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			/*top、bottom、left和right 均设置为0*/
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			/*margin设置为auto*/
+			margin: auto;
+			border: 1px solid green;
+		}
+	</style>
+
+	<body>
+		<div class="wrapper">
+			<div class="content"></div>
+		</div>
+		<ul id="members">
+			<li><a href="javascript:;">22222222222</a></li><li><a href="">22222222222</a></li>
+			<li><a href="">22222222222</a></li>
+		</ul>
+		
+		<!--4、简述一下src与href的区别 href 是指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，用于超链接。
+		 src是指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，
+		 例如js脚本，img图片和frame等元素。 当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，
+		 图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。-->
+	</body>
+
+</html>
+<script src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$( "#members li a" ).bind( "click", function(e) {
+			console.log(e);//<a href="javascript:;">22222222222</a>
+		});
+	})
+</script>

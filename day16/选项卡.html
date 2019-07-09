@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div{width:200px;height:200px;background:red;display: none;}
+        #box .active{background: greenyellow;}
+    </style>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var btn=box.getElementsByTagName("input");
+            var odiv=box.getElementsByTagName("div");
+            for(var i=0;i<btn.length;i++){
+                btn[i].index=i;
+                btn[i].onclick=function(){
+                    for(var i=0;i<btn.length;i++){
+                        btn[i].className="";
+                        odiv[i].style.display="none";
+                    }
+                    this.className="active";
+                    odiv[this.index].style.display="block";
+                }
+            }
+        };
+        //先变形，使用全局变量，尽量不要让函数嵌套函数，把onload中不是复制的语句单拿出来
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+</body>
+</html>

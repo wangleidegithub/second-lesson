@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clo{height: 400px;width: 400px;background: red;}
+    </style>
+    <script>
+        window.onload=function() {
+            var box = document.getElementById("box");
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick=function(){
+                /*box.style.height="400px";  //第一种方法
+                box.style.width="400px";
+                box.style.border="1px solid red";*/
+
+                //box.className="clo";   box后边的.和[]是等价的，如果用[]在[]内要加上""
+                //box["className"]="clo";   cssText添加样式是合写方式，等号后边的写法和css一样
+                // box.style.cssText="height: 400px;width: 400px;background: red;";
+                box.style.cssText="heght:400px;width:500px;background:blue";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    优就业是中国IT培训教育事业的国内知名品牌，北京市民办教育协会成员(理事)单位。
+    优就业致力于培养面向电商及互联网领域的高端人才，是一家集网络营销经理、互联网产品经理、
+    网页设计师、Web前端工程师、PHP工程师、Android工程师、IOS工程师、Java工程师、
+    C/C++工程师等课程为一体的专业培训机构。
+</div>
+<button id="btn1">添加样式</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = new Object();
+        obj.name = "小明";   //var name = "小明";
+        obj.age = 18;
+        obj.talk=function(){
+            console.log(this);
+            console.log("我的名字是:"+this.name+",我今年："+this.age);
+        };
+
+        var obj2 = new Object();
+        obj2.name="jack";
+        console.log(obj.name,obj.age);
+        console.log(obj2.name,obj2.age);
+        obj2.age=20;
+        obj2.talk=function(){
+            console.log(this);
+            console.log("我的名字是:"+this.name+",我今年："+this.age);
+        };
+        obj2.talk();
+        obj.talk();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

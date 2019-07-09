@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var ul1=document.getElementsByTagName("ul")[0];
+            var lis=ul1.getElementsByTagName("li");
+            var btn=document.getElementsByTagName("button")[0];
+            //lis[0].style.background="red";
+
+            btn.onclick=function(){
+                //console.log(lis.length);
+                for(var i=0;i<lis.length;i++){
+                    lis[i].style.background="red";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>111111111111111111</li>
+    <li>222222222222222222</li>
+    <li>222222222222222222</li>
+    <li>222222222222222222</li>
+    <li>222222222222222222</li>
+</ul>
+<button>按钮</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("div").fadeOut(2000);//淡出 改变的是透明度
+            });
+            $("#btn2").click(function(){
+                $("div").fadeIn(2000);//淡入
+            });
+            $("#btn3").click(function(){
+                $("div").fadeToggle(2000);//开关
+            });
+            $("#btn4").click(function(){
+                $("div").fadeTo(2000,0.4);//透明到什么程度
+            })
+        })
+    </script>
+</head>
+<body>
+<div style="height: 200px;width: 200px;background: red;"></div>
+<button id="btn1">淡出</button>
+<button id="btn2">淡入</button>
+<button id="btn3">开关</button>
+<button id="btn4">btn</button>
+</body>
+</html>

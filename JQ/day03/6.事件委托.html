@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            function fn(){alert("11111")}
+            function fn1(){alert("22222")}
+
+            $("ul").delegate("li","click",fn)
+                    .delegate("li","click",fn1)
+                    .undelegate("li","click",fn)
+                    .append("<li>33333</li>");
+
+            $("div").on("click","p",fn)
+                    .append("<p>p标签</p>")
+                    .off();
+
+            $("div").one("click","p",fn);
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>111111</li>
+    <li>222222</li>
+</ul>
+<div></div>
+</body>
+</html>

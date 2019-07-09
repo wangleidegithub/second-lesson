@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //群组选择器
+            //$("#box,p").css("background","red");
+            //子元素选择器
+            //$("#box1>span").css("background","red");
+            //后代选择器
+            //$("#box1 span").css("background","red");
+            //兄弟相邻选择器
+            //$("#box1+h4").css("background","red");//紧邻的后边一个
+            //$("#box1").prev("p").css("background","red");//紧邻的前一个
+
+            //兄弟选择器
+            //$("#box2~h3").css("background","red");//后边的("标签")所有兄弟
+            $("#box2").siblings("h3").css("background","red");//前后选中的("标签")所有兄弟
+              $("#box2").next("h3").css("background","red");//后边的紧邻的一个
+            //$("#box2").nextAll("h3").css("background","red");//后边的("标签")所有兄弟
+            //$("#box2").prevAll("h4").css("background","red");//前面的("标签")所有兄弟
+            $("#box2").prev("h4").css("background","red");//前面的紧邻的一个
+        })
+    </script>
+</head>
+<body>
+<div id="box">123</div>
+<p>p标签</p>
+<p>p标签</p>
+<div id="box1">
+    <span>span标签</span>
+    <div><span>span标签</span></div>
+</div>
+<h4>h4标签</h4>
+<h4>h4标签</h4>
+<div id="box2"></div>
+<h3>h3标签</h3>
+<h3>h3标签</h3>
+<h3>h3标签</h3>
+</body>
+</html>

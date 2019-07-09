@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oimg=document.getElementById("oimg");
+            var flag=true;
+            oimg.onclick=function(){
+                if(flag){
+                    oimg.src="img/2.jpg";
+                    flag=false;
+                }else if(flag==false){
+                    oimg.src="img/1.jpg";
+                    flag=true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="img/1.jpg" id="oimg">
+</body>
+</html>

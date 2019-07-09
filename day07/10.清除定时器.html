@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var n=5;
+            var op=document.getElementsByTagName("p")[0];
+            var btn=document.getElementsByTagName("button")[0];
+            var time=null;
+            btn.onclick=function(){
+                clearInterval(time);
+                time=setInterval(function(){
+                    n--;
+                    op.innerHTML=n;
+                    if(n==0)clearInterval(time)
+                },1000)
+            }
+        }
+    </script>
+</head>
+<body>
+<p></p>
+<button>开始倒计时</button>
+</body>
+</html>

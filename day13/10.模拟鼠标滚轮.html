@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box1{height: 400px;width: 20px;position: relative;background: blue;margin: 100px auto;}
+        #box2{height: 30px;width: 20px;position: absolute;left:0;top:0;background: black;}
+        #box3{height: 0;width: 200px;position: absolute;left:0;top:0;background: red;}
+    </style>
+    <script>
+        window.onload=function(){
+            var box1=document.getElementById("box1");
+            var box2=document.getElementById("box2");
+            var max=box1.offsetHeight-box2.offsetHeight;
+            box2.onmousedown=function(ev){
+                ev = ev || event;
+                var disY=ev.clientY-box2.offsetTop;
+                document.onmousemove=function(ev){
+                    ev = ev || event;
+                    var Y=ev.clientY-disY;
+                    if(Y<0){
+                        Y=0;
+                    }else if(Y>max){
+                        Y=max;
+                    }
+                    box2.style.top=Y+"px";
+                };
+
+                document.onmouseup=function(){
+                    document.onmousemove=document.onmouseup=null;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+<div id="box1">
+    <div id="box2"></div>
+</div>
+<div id="box3"></div>
+
+</body>
+</html>

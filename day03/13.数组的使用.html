@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function() {
+            var oimg = document.getElementById("oimg");
+            var btn = document.getElementById("btn");
+            var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+            var n=1;
+            btn.onclick=function(){
+                n++;
+                if(n==4){
+                    n=1;
+                }
+                oimg.src=arr[n];
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="img/1.jpg" id="oimg">
+<input type="button" id="btn" value="下一张">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        alert(this);
+
+        function fn(){
+            alert(this);//指向的还是window
+        }
+        fn();
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+</body>
+</html>
+<script>
+    document.getElementById("btn").onclick=function(){
+        alert(this.value);
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            box.onmousewheel=function(ev){
+                ev = ev || event;
+                console.log(ev.wheelDelta);
+            };
+
+            function fn1(ev){
+                ev = ev || event;
+                console.log(ev.detail);
+            }
+            addEventListener("DOMMouseScroll",fn1,false);//火狐
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+<div id="box" style="height: 200px;width: 200px;background: blue;"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var tb=document.getElementById("tb");
+            var trs=tb.rows;
+            for(var i=0;i<trs.length;i++){
+                if(i%2==0){
+                    trs[i].style.background="blue";
+                }else {
+                    trs[i].style.background="red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table border="1" id="tb" width="500">
+    <thead>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>老王</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>皮皮虾</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>大闸蟹</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>小龙虾</td>
+            <td>4</td>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>

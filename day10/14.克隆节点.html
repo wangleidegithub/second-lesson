@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                var oldImg=document.getElementById("oimg");
+                var newImg=oldImg.cloneNode(true);
+                document.body.appendChild(newImg);
+              
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="img/1.jpg" id="oimg">
+<input type="button" id="btn" value="按钮">
+</body>
+</html>

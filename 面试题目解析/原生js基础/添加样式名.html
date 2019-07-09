@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="active">2222    <span>222</span>            </div>
+    <div>1111</div>
+    <p>3333</p>
+</body>
+</html>
+<script>
+    var odiv=document.getElementsByClassName("active")[0];
+    console.dir(odiv);
+    odiv.className+=' '+'newclassname';
+    function hasClass(element,className){
+        return new RegExp(className,'gi').test(element.className)
+    }
+    var a=hasClass(odiv,'newClassName');
+    console.log(a);
+    function removeClass(element,className){
+        element.className=element.className.replace(new RegExp('(^|\\b)'+className.split(' ').join('|')+'(\\b|$)','gi'),'');
+    }
+    console.log(removeClass(odiv,"active"));
+    odiv.classList.add("aa");
+    odiv.classList.remove("aa");
+    odiv.classList.toggle("aa");
+    odiv.setAttribute("style",'');
+    console.log(odiv.nodeName);
+    console.log(odiv.childNodes[1]);
+    console.log(odiv.children);
+    var a=document.createElement("i");
+    odiv.appendChild(a);
+    console.log(odiv.hasChildNodes());
+    odiv.removeChild(a);
+</script>

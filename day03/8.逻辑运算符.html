@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //逻辑且只要有一个条件不成立就不成立，必须两个条件都成立才成立
+        if(8>=5 && 10>=20){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+        if(10<=20 && 8<=5){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+        if(8>5 && 30>20){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+
+        //逻辑或只要有一个条件成立就成立，两个条件都不成立的时候才不成立
+        if(8>=5 || 10>=20){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+        if(10<=20 || 8<=5){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+        if(5>8 || 10>20){
+            console.log("条件成立");
+        }else {
+            console.log("条件不成立")
+        }
+
+        //逻辑非,相当于取反
+        if(5!=3){
+            console.log("成立");
+        }else {
+            console.log("不成立");
+        }
+
+        //三目运算符
+        //条件？成立执行此处代码:不成立执行此处代码;
+        10<8 ? console.log("成立") : console.log("不成立");
+
+        if(10<8){
+            console.log("成立");
+        }else {
+            console.log("不成立");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

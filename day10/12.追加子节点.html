@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                //新建的标签
+                var newli=document.createElement("li");
+                //新建的文本
+                var newText=document.createTextNode("361");
+                //获取标签
+                var oul=document.getElementById("myul");
+                var f1=document.getElementById("f1");
+                newli.appendChild(newText);
+                oul.insertBefore(newli,f1);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="myul">
+    <li>耐克</li>
+    <li id="f1">阿迪达斯</li>
+    <li>乔丹</li>
+    <li>美特斯邦威</li>
+    <li id="f2">李宁</li>
+</ul>
+<input type="button" value="追加" id="btn">
+</body>
+</html>

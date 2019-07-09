@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                /*$("div").append("<p>我是P标签</p>");
+                $("<h1>我是h1</h1>").appendTo("div");*/
+
+                /*$("div").prepend("<p>我是P标签</p>");
+                $("<h1>我是h1</h1>").prependTo("div");*/
+
+                /*$("#li1").before("<li>before</li>");
+                $("#li1").after("<li>after</li>");*/
+                $("<li>before</li>").insertBefore("#li1");
+                $("<li>after</li>").insertAfter("#li1");
+                
+            })
+        })
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;border: 1px solid red;"></div>
+<button>按钮</button>
+<ul>
+    <li id="li1">213123213</li>
+</ul>
+</body>
+</html>

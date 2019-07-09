@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*由于 v-for 比 v-if 渲染优先级更高，所以有时候可以一起使用。下面两种常见的情况下会倾向于把 v-for 和 v-if 放在同一个标签上使用：
+
+	筛选一些不想显示的条目
+	为了避免渲染本应该被隐藏的列表*/
+	<template>
+	  <ul class="items">
+	    <!-- 只有激活的用户才可以显示 -->
+	    <li 
+	      v-for="(user, index) in users" 
+	      v-if="user.isActive" 
+	      :key="user.id">
+	      {{ user.name }}
+	    </li>
+	  </ul>
+	</template>
+
+</script>

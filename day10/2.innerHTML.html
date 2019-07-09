@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("btn").onclick=function(){
+                document.getElementById("op").innerHTML="<span style='border: 1px solid red;'>我是京东</span>";
+                //document.getElementById("op").innerText="<span style='border: 1px solid red;'>我是京东</span>";
+            }
+        }
+    </script>
+</head>
+<body>
+<p id="op">我是淘宝</p>
+<input type="button" value="按钮" id="btn">
+</body>
+</html>

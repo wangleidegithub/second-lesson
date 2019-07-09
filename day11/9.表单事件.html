@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oForm=document.getElementById("oForm");
+            oForm.onsubmit=function(){
+                this.style.background="red";
+                if(oForm.user.value==""){
+                    alert("请填写用户名");
+                    return false;
+                }
+            };
+
+            oForm.onreset=function(){
+                this.style.background="yellow";
+                return confirm("您是否重置");
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="http://www.ujiuye.com" id="oForm">
+    用户名:<input type="text" id="oname" name="user"><br>
+    密码:<input type="password" id="pass" name="pass"><br>
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+</form>
+</body>
+</html>

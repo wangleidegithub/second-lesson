@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //this的指向是对象，属性是变化的，
+        // 一会是小明一会是小强，所以不要用原型的写法
+        function people(name){
+            this.name=name;
+        }
+        people.prototype.talk=function(){//方法是可以公用的，所以卸载pro下边
+            console.log(this.name+"去吃饭");
+        };
+        var p1 = new people("小明");
+        var p2 = new people("小强");
+        p1.talk();
+        p2.talk();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

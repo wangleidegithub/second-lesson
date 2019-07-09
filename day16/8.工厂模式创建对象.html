@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function people(name){
+            var obj = new Object();//进场的原料
+            obj.name=name;//进行原料加工
+            obj.talk=function(){
+                console.log("我的名字叫做："+this.name);
+            };
+            //出厂
+            return obj;
+        }
+        people("小强").talk();
+        people("小明").talk();//方法是可以重复调用的
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fn(a){
+            if(typeof a==="number"){
+                console.log("是数字类型的");
+                console.log(typeof a);
+            }else if(typeof a==="string"){
+                console.log("是字符串类型的");
+                 console.log(typeof a);
+            }else if(typeof a==="function"){
+                console.log("是函数类型的");
+                 console.log(typeof a);
+            }
+        }
+        fn(5);
+        fn("sadsad");
+        fn(function(){});
+    </script>
+</head>
+<body>
+
+</body>
+</html>

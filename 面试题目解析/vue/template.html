@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// 我们在做 v-if 判断的时候，可以把判断条件放在 template 组件上，最终的渲染结果将不包含 <template> 元素。
+	<template>
+	  <div class="box">
+	    <template v-if="isVal">
+	      <h2>...</h2>
+	    </template>
+	    <template v-else>
+	      <h2>...</h2>
+	    </template>
+	  </div>
+	</template>
+
+</script>

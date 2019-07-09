@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	
+	</style>
+
+	<body>
+	
+	</body>
+
+</html>
+<script src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+/*async function timeout() {
+    return 'hello world'
+}
+console.log(timeout());
+console.log('虽然在后面，但是我先执行');*/
+
+
+async function timeout() {
+    return 'hello world'
+}
+timeout().then(res => {
+    console.log(res);
+})
+console.log('虽然在后面，但是我先执行');
+
+
+/*async function timeout(flag) {
+    if (flag) {
+        return 'hello world'
+    } else {
+        throw 'my god, failure'
+    }
+}
+console.log(timeout(true))  // 调用Promise.resolve() 返回promise 对象。
+console.log(timeout(false)); // 调用Promise.reject() 返回promise 对象。*/
+
+function doubleAfter2seconds(num) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(2 * num)
+        }, 2000);
+    } )
+}
+async function testResult() {
+    let result = await doubleAfter2seconds(30);
+    console.log(result);
+}
+testResult();
+/*JS中调用 async 函数时会返回一个 Promise 对象（隐式转换）。当async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值，当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。 
+在async 函数中如果遇见 await 表达式，则 async 函数会暂停执行，等待表达式中的 Promise 解析完成后继续执行 async 函数并返回结果。
+- async/await是写异步代码的新方式，以前的方法有回调函数和Promise。
+- async/await是基于Promise实现的，它不能用于普通的回调函数。
+- async/await与Promise一样，是非阻塞的。
+- async/await使得异步代码看起来像同步代码，这正是它的魔力所在。
+https://www.cnblogs.com/fundebug/p/6667725.html
+*/
+
+</script>
+<script>
+    //使用aysnc/await的话，catch能处理JSON.parse错误:
+    const makeRequest=async ()=>{
+        try{
+            getJOSN().then(res=>{
+
+            })
+        }catch(err){
+
+        }
+    }
+
+</script>

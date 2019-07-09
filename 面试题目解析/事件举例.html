@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div id="btn" onclick="clickone()" onclick="clicktwo()">22222</div>--> 
+		<div id="btn">11111</div>
+	</body>
+</html>
+<script type="text/javascript">
+	　function clickone(){ alert("hello"); } //执行这个
+
+　　function clicktwo(){ alert("world!"); }
+
+			/*	document.getElementById("btn").onclick = function(){ alert("hello"); }
+
+　　　　　document.getElementById("btn").onclick = function(){ alert("world"); } //执行这个*/
+//					document.getElementById("btn").addeventlistener("click",clickone,false);
+
+　　　　　function clickone(){ alert("hello"); } //先执行
+　		function clicktwo(){ alert("world"); } //后执行
+
+//　　　　　document.getElementById("btn").addeventlistener("click",clicktwo,false);
+
+　　　　
+</script>

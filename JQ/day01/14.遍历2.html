@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            var dog={
+                "name":"小黄",
+                "color":"whiteAndBlack",
+                "eat":function(){
+                    alert("吃猫粮");
+                }
+            };
+
+            $.map(dog,function(key,value){
+                console.log(key+"-------"+value);
+            });
+
+            $.map(dog,function(value){
+                console.log(value);
+            });
+
+            $.each(dog,function(key,value){
+                console.log(key+"-------"+value);
+            });
+
+            $.each(dog,function(key,value){
+                console.log(value);
+            })
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

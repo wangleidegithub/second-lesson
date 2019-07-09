@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	
+	</style>
+
+	<body>
+	
+	</body>
+
+</html>
+<script src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+
+var fn = function(num) {
+    return new Promise(function(resolve, reject) {
+        if (typeof num == 'number') {
+            resolve(num);
+        } else {
+            reject('TypeError');
+        }
+    })
+}
+
+fn(2).then(function(num) {
+    console.log('first: ' + num);
+    return num + 1;
+})
+fn(2).then(res=>{
+    console.log(res);
+})
+/*.then(function(num) {
+    console.log('second: ' + num);
+    return num + 1;
+})
+.then(function(num) {
+    console.log('third: ' + num);
+    return num + 1;
+});*/
+console.log(fn(2))
+
+
+</script>

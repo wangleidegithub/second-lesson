@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        window.onload=function(){
+            var box = document.getElementsByTagName("div")[0];
+            box.style.cssText="width:200px;height:200px;background:red;";
+            console.log(box.style.background);
+        };
+        $(function(){
+            console.log($("div").css("background"));
+            $("div").css("background","red").siblings("p").html("你好");
+            console.log($("div").html());
+        })
+    </script>
+</head>
+<body>
+<div>123123</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+</html>

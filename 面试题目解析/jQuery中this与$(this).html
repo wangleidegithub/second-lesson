@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="textbox" title="好好">
+			<img src="../day02/img/1.jpg" alt=""  />
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	// this其实是一个Html 元素。
+// this，表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。
+//　　$(this),代表的上下文对象是一个jquery的上下文对象，可以调用jquery的方法和属性值。
+	$(function(){
+		$("#textbox  img").each(function(index){	 
+		     alert($(this).attr('src'));
+		     alert(this);
+		});
+		console.log($("#textbox  img").attr('src'))
+		$("#textbox").click(function() {
+		    alert( $(this).attr("id") );
+			 alert( this.id );
+		});
+	})
+</script>
+<script type="text/javascript">
+	
+var obj = {
+  foo: function () { console.log(this.bar) },
+  bar: 1
+};
+
+var foo = obj.foo;
+var bar = 2;
+
+obj.foo() // 1
+foo() // 2
+ 
+ // 就在于函数体内部使用了this关键字。很多教科书会告诉你，this指的是函数运行时所在的环境。
+ //对于obj.foo()来说，foo运行在o//bj环境，所以this指向obj；对于foo()来说，foo运行在全局环境，所以this指向全局环境。所以，两者的运行结果不一样。
+   
+
+// 2.对象方法的调用
+ 	function showName() {
+        // console.log(this.name);
+        console.log(this);
+    }
+    var obj = {};
+    obj.name = "ooo";
+    obj.show = showName;
+    obj.show(); //ooo
+	console.log(obj.showName());
+// 3.构造函数的调用
+ 	function showName() {
+        this.name = "showName function";
+        console.dir(this);
+    }
+    var obj = new showName();
+    console.log(obj.name); //showName function
+// 4.apply/call调用时的this
+	/*语法：call(thisObj，Object)
+定义：调用一个对象的一个方法，以另一个对象替换当前对象。
+说明：
+call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
+如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。*/
+var value="Global value";
+function FunA(){
+	this.value="AAA";
+}
+function FunB(){
+	console.log(this.value);
+}
+FunB();//Global value 因为是在全局中调用的FunB(),this.value指向全局的value
+FunB.call(window);
+console.log(window)
+// https://www.cnblogs.com/Nancy-wang/p/6928395.html
+</script>

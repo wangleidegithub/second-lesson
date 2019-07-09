@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*function fn(){
+
+        }
+
+        var fn1 = function(){
+
+        };*/
+
+        var fn2 = new Fn2();
+        function Fn2(){
+            alert(1);
+        }
+        fn2();
+
+        /*function(){
+
+        }*/
+
+        /*(function(){
+            alert(1)
+        })();*/
+
+        (function(a,b){
+            alert(a+b);
+        })(10,20);
+
+        //返回值
+        var s = (function(a,b){
+            return a+b;
+        })(10,20);
+        console.log(s);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

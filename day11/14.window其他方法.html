@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById("pri").onclick=function(){
+                window.print();//调用打印页面
+            };
+
+            document.getElementById("pro").onclick=function(){
+                var str=window.prompt("请输入一个字","");
+                str=parseInt(str);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="pri" value="打印">
+<input type="button" id="pro" value="输入">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*window.onload=function(){
+            var arr=["HTML","CSS","JS"];
+            var btn=document.getElementsByTagName("input");
+            for(var i=0;i<btn.length;i++){
+                btn[i].index=i;
+                btn[i].onclick=function(){
+                    //btn[i].value=arr[i];   报错
+                    this.value=arr[this.index];
+                }
+            }
+        }*/
+    </script>
+</head>
+<body>
+<input type="button" value="按钮1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+</body>
+</html>
+<script>
+	window.onload=function(){
+		var arr=["HTML","CSS","JS"];
+        var btn=document.getElementsByTagName("input");
+        for(var i=0;i<btn.length;i++){
+//      	btn[i].index=i;
+        	btn[i].index=i;
+        	btn[i].onclick=function(){        		
+        		this.value=arr[this.index];
+        	}
+        }
+	}
+</script>

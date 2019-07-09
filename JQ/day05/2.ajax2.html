@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            var url = "txt/2.json";
+            $("button").click(function(){
+                $.getJSON(url,function(data){  //get  post
+                    showData(data);
+                })
+            });
+			
+            function showData(data){
+                $("#box").html(data[0].name);
+                $("#box1").html(data[0].age);
+                $("#box2").html(data[1].name);
+                $("#box3").html(data[1].age);
+            }
+        })
+    </script>
+</head>
+<body>
+<div id="box">sadasdd</div>
+<div id="box1">sadasdd</div>
+<div id="box2">sadasdd</div>
+<div id="box3">sadasdd</div>
+<button>按钮</button>
+</body>
+</html>

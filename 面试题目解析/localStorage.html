@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="username" class="11" placeholder="请输入真实姓名"/>
+		<input type="password" id="password" placeholder="请输入密码（默认密码123456）"/>
+		<input type="button" value="登录考试" onclick="login()">
+	</body>
+</html>
+<script type="text/javascript">
+	 function login(){
+      var username=window.document.getElementById("username").value;
+      var password=window.document.getElementById("password").value;
+      if(password=="123456")
+      {
+        window.sessionStorage.setItem("username", username);
+        console.log(window.sessionStorage.getItem("username"));//23
+        window.location.href="index.html" ;
+      }else{
+        alert("密码错误请输入正确的密码，例如：123456！");
+        return false;
+      }
+    }
+</script>

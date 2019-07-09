@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    	/*isNaN(x),如果 x 是特殊的非数字值 NaN（或者能被转换为这样的值），返回的值就是 true。
+    	如果 x 是其他值,则返回 false。
+		isNaN() 函数可用于判断其参数是否是 NaN，该值表示一个非法的数字（比如被 0 除后得到的结果）。*/
+        console.log(isNaN(10));//false 10是个数，
+        console.log(isNaN("10"));//false
+        console.log(isNaN("web前端"));//true
+        console.log(isNaN("11111web前端"));//true
+        console.log(isNaN("web前端1111"));//true
+        console.log(isNaN(true));//false
+        console.log(isNaN(false));//false
+    </script>
+</head>
+<body>
+
+</body>
+</html>

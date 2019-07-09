@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oimg=document.getElementById("oimg");
+            var txt=document.getElementById("txt");
+            var btn=document.getElementById("btn");
+            console.log(oimg);
+            btn.onclick=function(){
+                oimg.src=txt.value;//把text的value值赋给oimg的src
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="img/1.jpg" id="oimg">
+<input type="text" id="txt" value="">
+<input type="button" id="btn" value="按钮">
+</body>
+</html>

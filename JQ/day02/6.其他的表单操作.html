@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //$("input").css("background","blue");
+            //$(":input").css("background","blue");//所有input类型的元素
+            //$(":text").css("background","blue");//文本框
+            //$("button").css("background","blue");
+            //$(":button").css("background","blue");//所有按钮类型
+            //$(":checked").css("background","blue");
+            //$(":enabled").css("background","blue");//当前可用的
+            $(":disabled").css("background","blue");//不可用的
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="按钮1">
+<input type="text" value="文本框">
+<textarea>123123</textarea>
+<select>
+    <option selected>1</option>
+</select>
+<input type="checkbox" value="A" checked>
+<input type="checkbox" value="B">
+<button>按钮2</button>
+<input type="button" value="禁用的按钮" disabled>
+</body>
+</html>

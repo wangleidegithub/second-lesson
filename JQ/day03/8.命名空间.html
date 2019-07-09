@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            function fn(){alert("fn")}
+            function fn1(){alert("fn1")}
+            $("div").bind("click.abc",fn);
+            $("div").bind("click.xyz",fn1);
+
+            $("div").unbind("click.xyz",fn1);
+        })
+    </script>
+</head>
+<body>
+<div style="height: 200px;width: 200px;background: red;"></div>
+</body>
+</html>

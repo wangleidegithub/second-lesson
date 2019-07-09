@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{height: 200px;width: 100px;}
+    </style>
+    <script>
+        /*for循环的嵌套        i=0满足条件，走循环体内的代码
+         //循环以内又是一个循环，循环体内的j循环需要走完一个完整的循环，才会去走外面的循环
+         //当内部循环走完一个过程后，i加上1=1，条件成立
+         //再次去走循环体内的代码
+         //总结一句话：外部的循环走一次，内部的循环走三次，当内部循环走完次数后，才会跳到外部循环  */
+        for(var i=0;i<3;i++){
+            for(var j=0;j<3;j++){
+                console.log(j);
+            }
+            console.log("\n");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

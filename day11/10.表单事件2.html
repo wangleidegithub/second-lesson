@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oForm=document.getElementById("oForm");
+            var oname=document.getElementById("oname");
+            var op2=document.getElementById("op2");
+            console.dir(op2)
+            oname.onfocus=function(){
+                this.value="";
+            };
+
+            oname.onblur=function(){
+                this.value="请填写用户名";
+                op2.selected=true;
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="http://www.ujiuye.com" id="oForm">
+    用户名:<input type="text" id="oname" name="user" value="请填写用户名"><br>
+    <select>
+        <option>选项1</option>
+        <option id="op2">选项2</option>
+        <option>选项1</option>
+    </select>
+</form>
+</body>
+</html>

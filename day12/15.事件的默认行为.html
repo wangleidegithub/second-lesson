@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oA=document.getElementById("oA");
+            oA.onclick=function(){
+                return false;
+            };
+
+            document.oncontextmenu=function(){
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="http://www.ujiuye.com" id="oA">点击</a>
+</body>
+</html>

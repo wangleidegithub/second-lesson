@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oname=document.getElementById("oname");
+            oname.onchange=function(){
+                this.style.color="red";
+            }
+            oname.addEventListener("input",myfun,false);
+            function myfun(){
+　　　　alert(document.getElementById('oname').value);
+
+} 
+        }
+    </script>
+</head>
+<body>
+<form action="http://www.ujiuye.com" id="oForm">
+    用户名:<input type="text" id="oname" name="user" value="请填写用户名"><br>
+</form>
+</body>
+</html>

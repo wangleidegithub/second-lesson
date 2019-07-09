@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{height: 200px;width: 200px;background: blue;}
+    </style>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var btn=document.getElementById("btn");
+            btn.onclick=function(){
+                box.style.height="400px";
+                	/*只是行间样式，获取不到外部样式或者内部样式
+                console.log(box.style.height);
+                console.log(box.style.width);*/
+                console.log(box.style.height);
+                console.log(getComputedStyle(box).width);//标准下获取非行间样式
+                console.log(getComputedStyle(box).height);
+                console.log(box.currentStyle.width);//IE下获取
+
+                if(box.currentStyle){
+                    alert(box.currentStyle.width);
+                }else {
+                    alert(getComputedStyle(box).width);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<input type="button" id="btn" value="获取样式">
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function add(j, k){
+    return j+k;
+}
+
+function sub(j, k){
+    return j-k;
+}
+
+//apply接受的是数组参数，call接受的是连续参数。
+add(5,3); //8
+add.call(sub, 5, 3); //8
+
+console.dir(add)
+console.log(add.call(sub, 5, 3))
+add.apply(sub, [5, 3]); //8
+console.log(add.apply(sub, [5, 3]))
+sub(5, 3); //2
+sub.call(add, 5, 3); //2
+sub.apply(add, [5, 3]); //2
+var a = {0:1, 1:"yjc", length: 2};
+console.log(typeof a);//object
+//Array.prototype.slice.call(a);//[1, "yjc"]
+console.log(Array.prototype.push.call(a))
+
+
+var Parent = function(){
+    this.name = "yjc";
+    this.age = 22;
+}
+
+var child = {};
+
+console.log(typeof Parent);//Object {} ,空对象
+
+Parent.call(child);
+
+console.log(child); //Object {name: "yjc", age: 22}
+//以上实现了对象的继承。https://www.cnblogs.com/qiaojie/p/5746688.html
+
+/*obj.bind(thisObj, arg1, arg2, ...);
+把obj绑定到thisObj，这时候thisObj具备了obj的属性和方法。与call和apply不同的是，bind绑定后不会立即执行。*/
+
+//同样是add()和sub()：
+
+add.bind(sub, 5, 3); //不再返回8
+add.bind(sub, 5, 3)(); //8
+//如果bind的第一个参数是null或者undefined，等于将this绑定到全局对象。
+//https://www.cnblogs.com/hahazexia/p/8691052.html
+var a = [1,2,3];
+var b = [4,5,6];
+
+a.push.apply(a, b);
+
+console.log(a) //[1,2,3,4,5,6]
+//其实这样的写法等价于
+var a = [1,2,3];
+var b = [4,5,6];
+
+Array.prototype.push.apply(a, b);
+// Array.prototype.push.apply(a,b);
+
+console.log(a) //[1,2,3,4,5,6]
+Array.prototype.slice.call(arguments)
+</script>

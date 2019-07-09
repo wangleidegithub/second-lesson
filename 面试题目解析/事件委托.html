@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<ul id="ul1">
+	    <li>111</li>
+	    <li>222</li>
+	    <li>333</li>
+	    <li>444</li>
+	</ul>
+	</body>
+</html>
+<script>
+/*	window.onload = function(){
+    var oUl = document.getElementById("ul1");
+    var aLi = oUl.getElementsByTagName('li');
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick = function(){
+        	console.log(this);//<li>111</li>
+            alert(this.innerHTML);
+        }
+    }
+}*/
+	
+	
+/*	window.onload = function(){
+    var oUl = document.getElementById("ul1");
+   oUl.onclick = function(){
+        alert(123);
+    }
+}*/
+	
+	window.onload = function(){
+　　var oUl = document.getElementById("ul1");
+　　oUl.onclick = function(ev){
+　　　　var ev = ev || window.event;
+//事件对象兼容:
+
+//（1）.IE8或IE8以下的浏览器中，事件处理函数中使用的事件对象是window.event。
+
+//（2）.IE8以上浏览器或者其他标准浏览器，通常使用给事件处理阐述传递的事件对象。
+				console.log(ev);
+　　　　var target = ev.target || ev.srcElement;
+				console.log(target);
+　　　　if(target.nodeName.toLowerCase() == 'li'){
+　 　　　　　　	//alert(123);
+　　　　　　　  alert(target.innerHTML);
+　　　　}
+　　}
+}
+</script>

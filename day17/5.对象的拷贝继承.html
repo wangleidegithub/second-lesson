@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //普通的方式会污染对象的属性
+        /*var a = {
+            name : "jack"
+        };
+        var b = a;
+        b.name = "小明";
+        console.log(a.name);
+        console.log(b.name);*/
+
+        //
+        var a = {
+            name : "jack"
+        };
+        var b = {};//定义b的类型也是一个空对象
+        for(var attr in a){
+            b[attr]=a[attr];//循环处a的值赋给b是普通复制
+        }
+        b.name="小强";//改变b的值就不会覆盖
+        console.log(a.name);
+        console.log(b.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

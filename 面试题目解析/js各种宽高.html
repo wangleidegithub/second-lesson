@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+    <style type="text/css">
+/*      body{
+     border: 20px solid #000;
+     margin: 10px;
+     padding: 40px;
+     background: #eee;
+     height: 350px;
+     width: 500px;
+     overflow: scroll;
+}
+#mydiv{
+      width: 200px;
+      height: 200px;
+      background: red;
+      border: 1px solid #000;
+      overflow: auto;
+}*/
+body{
+   /*  border: 20px solid #000;
+    margin: 10px;
+    padding: 40px;
+    background: #eee;
+    height: 350px;
+    width: 500px; */ 
+}
+#mydiv{
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin :10px;
+    background: #f60;
+    border: 20px solid #888;
+}
+    </style>
+	</head>
+	<body>
+	   <div>
+      与window相关的宽高有一下几个：
+
+      window.innerWidth，通过字面意思我们知道这是一个内部的宽度
+
+      window.innerHeight，内部的高度
+
+      window.outWidth，外部的宽度
+
+      window.outHeight，外部的高度 
+     </div>
+     <div id="mydiv">
+       与client相关的宽高又有如下几个属性：
+
+      document.body.clientWidth
+
+      document.body.clientHeight
+
+      document.body.clientLeft
+
+      document.body.clientTop
+     </div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+  // 1.Window对象表示浏览器中打开的窗口；window对象可以省略。比如alert()、window.alert()。
+// Document对象是Window对象的一部分。那么document.body 我们可以写成window.document.body；浏览器的HTML文档成为Document对象。
+/*2.window对象的location属性引用的是Location对象，表示该窗口中当前显示文档的URL。
+document的对象的location属性也是引用了Location对象。*/
+
+console.log(window.innerWidth);
+console.log(window.innerHeight);
+console.log(window.outWidth);
+console.log(window.outHeight);
+
+console.log(window.screen.width);
+console.log(window.screen.height);
+console.log(window.screenTop);
+console.log(window.screenLeft);
+// document下面client相关宽高介绍
+
+
+
+console.log(document.body.clientHeight);    //430（padding*2+height）
+console.log(document.body.clientWidth);     //580（padding*2+width）
+var mydiv = document.getElementById("mydiv");
+console.log("mydiv.clientHeight=",mydiv.clientHeight);    // 200
+console.log("mydiv.clientWidth=",mydiv.clientWidth);      // 183（减去了滚动条的宽度）
+
+
+console.log(mydiv.offsetLeft);
+console.log(mydiv.offsetTop);
+// 与offset相关宽高介绍
+
+</script>

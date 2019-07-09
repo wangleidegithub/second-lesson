@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("div").click(function(){
+                alert("div");
+            });
+            $("p").click(function(ev){
+                ev = ev || event;
+                //ev.cancelable=true;在这没用
+                ev.stopPropagation();
+                alert("p标签");
+            });
+
+            $(document).contextmenu(function(){
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+<div style="height: 100px;width: 100px;background: red;position: relative;">
+    <p style="position: absolute;left: 0;top: 300px;">123123</p>
+</div>
+</body>
+</html>

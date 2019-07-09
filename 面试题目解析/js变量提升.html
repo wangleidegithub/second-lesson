@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	console.log(x)
+var x = 'hello world';
+
+/*function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar();
+    function bar() {
+        return 8;
+    }
+}
+alert(foo());*/
+/*function foo(){
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+alert(foo());*/
+
+
+
+alert(foo());
+function foo(){
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+
+/*就很容易明白变量提升具体是怎么回事了。在代码执行前，执行上下文已经给对应的声明赋值，只不过变量是赋值为undefined，
+函数赋值为对应的引用，而后在执行阶段再将对应值赋值给变量。*/
+</script>

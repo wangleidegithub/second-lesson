@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			console.log( window.history);
+			window.onload=function(){
+				var btn=document.getElementById("btn");
+				btn.onclick=function(){
+					window.history.go("demo2");
+					// window.history.pushState({a:1},'222','demo2.html')
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<button id="btn">111111111111</button>
+		<a href="demo2.html">2222222</a>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*var arr = [1,2];
+        console.log(arr);*/
+
+        function A(){
+
+        }
+        A.prototype.num=10;//num在构造函数的原型下边
+        var a = new A();//a是通过A实例化出来的对象，可以拿到A的属性
+        console.log(a.num);//通过原型链去查找拿到的
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

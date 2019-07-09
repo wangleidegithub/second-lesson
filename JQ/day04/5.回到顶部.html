@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            $("div").click(function(){
+                $("html,body").animate({"scrollTop":20},2000);
+                //offset().top
+            })
+        })
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div style="height: 150px;width: 30px;position: fixed;right: 0;bottom: 0;border: 1px solid red;">回到顶部</div>
+</body>
+</html>

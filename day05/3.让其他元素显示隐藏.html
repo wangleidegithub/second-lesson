@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{list-style: none;height: 200px;width: 150px;background: red;position: relative;
+            margin-left: 20px;float: left;}
+        div{height: 300px;width: 100px;background: blue;position:absolute;left:25px;top: 40px;
+        display: none;}
+    </style>
+    <script>
+        window.onload=function(){
+            var lis=document.getElementsByTagName("li");
+              var divs=document.getElementsByTagName("div");
+              console.log(divs.length);
+            console.log(divs);
+            for(var i=0;i<lis.length;i++){
+                lis[i].onmouseover=function(){
+                    //this.divs[0].style.display="block";    这样写不对
+                    this.getElementsByTagName("div")[0].style.display="block";
+                };
+                lis[i].onmouseout=function(){
+                    this.getElementsByTagName("div")[0].style.display="none";
+                }
+            };
+            for(var i=0;i<lis.length;i++){
+                lis[]
+            }
+             
+        }
+           
+    </script>
+</head>
+<body>
+<ul>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    /*window.onload=function(){
+            var btns=document.getElementsByTagName("input");
+            for(var i=0;i<btns.length;i++){
+                box(i);
+            }
+            function box(ind) {
+                // body...
+                btns[ind].onclick=function(){
+                    console.log(ind)//3
+                    //btns[i].style.background="red";   这种写法不对
+                    this.style.background="red";
+                    console.log(this);
+                }
+            }
+        }*/
+</script>

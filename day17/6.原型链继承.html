@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = {
+            name:"jack"
+        };
+        function clone(obj){
+            var F = function(){};//定义一个新的函数
+            F.prototype=obj;//函数原型下边传入的a
+            //返回一个新的对象
+            return new F();
+        }
+        var b = clone(a);//在这调用
+        b.name="小强";
+        console.log(a.name);
+        console.log(b.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

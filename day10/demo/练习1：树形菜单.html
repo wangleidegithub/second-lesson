@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+           var olis=document.getElementsByClassName("yishu");
+            for(var i=0;i<olis.length;i++){
+                olis[i].onclick= function () {
+                   //var myli=this.nextSibling.nextSibling;
+                   var myli=this.nextElementSibling;
+                    if(myli.style.display=="none"){
+                        myli.style.display="block";
+                    }else{
+                        myli.style.display="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="yishu">前锋</li>
+        <li style="display: none">
+            <ul >
+                <li>C罗</li>
+                <li>本泽马</li>
+                <li>贝尔</li>
+            </ul>
+        </li>
+
+        <li class="yishu">中场</li>
+        <li style="display: none">
+            <ul >
+                <li>伊斯科</li>
+                <li>莫德里奇</li>
+                <li>卡塞米罗</li>
+                <li>克罗斯</li>
+            </ul>
+        </li>
+
+        <li class="yishu">后卫</li>
+        <li style="display: none">
+            <ul >
+                <li>拉莫斯</li>
+                <li>卡瓦哈尔</li>
+                <li>瓦拉内</li>
+                <li>马塞洛</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

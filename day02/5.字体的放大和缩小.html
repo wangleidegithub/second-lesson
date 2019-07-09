@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+            var btn1=document.getElementById("btn1");
+            var btn2=document.getElementById("btn2");
+            var n=14;
+            btn1.onclick=function(){
+                n=n+2;
+                console.log(box.style);
+                box.style.fontSize=n+"px";
+            };
+            btn2.onclick=function(){
+                n=n-2;
+                box.style.fontSize=n+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    优就业是中国IT培训教育事业的国内知名品牌，北京市民办教育协会成员(理事)单位。
+    优就业致力于培养面向电商及互联网领域的高端人才，是一家集网络营销经理、互联网产品经理、
+    网页设计师、Web前端工程师、PHP工程师、Android工程师、IOS工程师、Java工程师、
+    C/C++工程师等课程为一体的专业培训机构。
+</div>
+<button id="btn1">+</button>
+<button id="btn2">-</button>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var tb=document.getElementById("tb");
+            var oname=document.getElementById("name");
+            var oage=document.getElementById("age");
+            var btn=document.getElementById("btn");
+
+            btn.onclick=function(){
+                var newTr=document.createElement("tr");//添加tr
+                var newTd=document.createElement("td");//添加td
+                newTd.innerHTML=oname.value;
+                newTr.appendChild(newTd);
+
+                var newTd=document.createElement("td");//添加td
+                newTd.innerHTML=oage.value;
+                newTr.appendChild(newTd);
+
+                var newTd=document.createElement("td");//添加td
+                newTd.innerHTML="<a href='javascript:;'>删除</a>";
+                newTr.appendChild(newTd);
+
+                newTd.getElementsByTagName("a")[0].onclick=function(){
+                    tb.tBodies[0].removeChild(this.parentNode.parentNode);
+                };
+
+                tb.tBodies[0].appendChild(newTr);//把tr放在tbody里
+            }
+        }
+    </script>
+</head>
+<body>
+姓名：<input type="text" id="name">
+年龄：<input type="text" id="age">
+<input type="button" id="btn" value="添加">
+<table border="1" id="tb" width="500">
+    <thead>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>老王</td>
+            <td>18</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>皮皮虾</td>
+            <td>2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>大闸蟹</td>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //判断数据类型
+            var num = 10;
+            var arr = [2,5,6];
+            console.log($.type(num),$.type(arr));
+
+            //判断是否是数值
+            console.log($.isNumeric(num));
+            console.log($.isNumeric(arr));
+
+            //判断是否为函数
+            var fn = function(){};
+            console.log($.isFunction(fn));
+
+            //判断是否为空对象
+            var json={};
+            console.log($.isEmptyObject(json));
+
+            //判断是不是window对象
+            var win=window;
+            console.log($.isWindow(win));
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

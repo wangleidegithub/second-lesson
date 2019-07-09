@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function(){
+            //选取带此属性的选择器
+            //$("div[class]").css("background","red");
+				// $("div").css("background","red");
+            //属性有相应的值
+            $("div[class=box]").css("background","red");
+
+            //属性没有相应的值
+            // $("div[class!=box]").css("background","red");
+            // $("div[class!=box]").css("background","red");    
+        })
+    </script>
+</head>
+<body>
+<div class="box">123</div>
+<div class="box1">213</div>
+<div>213</div>
+</body>
+</html>
